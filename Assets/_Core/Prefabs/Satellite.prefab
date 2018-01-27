@@ -156,6 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496722382238132}
   - component: {fileID: 114341958087453452}
+  - component: {fileID: 114530002458936722}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Untagged
@@ -774,6 +775,19 @@ MonoBehaviour:
   visual: {fileID: 114917120472105288}
   orbitRotation: {x: 0, y: 0, z: 0.2}
   switchLaneDuration: 0.5
+  _mode: 2
+--- !u!114 &114530002458936722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813418348735258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225f2e8f1c3b54af8a77ff7d3b67807c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _satVisual: {fileID: 114917120472105288}
 --- !u!114 &114917120472105288
 MonoBehaviour:
   m_ObjectHideFlags: 1

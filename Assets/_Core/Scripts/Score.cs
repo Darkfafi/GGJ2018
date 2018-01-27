@@ -10,6 +10,12 @@ public class Score : MonoBehaviour {
     private Text _scoreText = null;
     [SerializeField]
     private RectTransform _rect = null;
+    [SerializeField]
+    private Canvas _canvas = null;
+    [SerializeField]
+    private GameObject _FloatText = null;
+
+    private Vector2 _uiOffset;
 
     private float _score = 0;
     private float _scoreTarget = 0;
@@ -35,14 +41,69 @@ public class Score : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-		
+        
 	}
 
-    public void AddScore(float _scoreParam)
+    public void AddScore(float _scoreParam, Vector3 _scoreUISpawnLocation = new Vector3())
     {
-        _scoreTarget += _scoreParam;
+        /*_scoreTarget += _scoreParam;
         _rect.DOComplete();
-        _rect.DOPunchScale(Vector3.one * 0.1f, 0.75f, 10, 1);
+        _rect.DOPunchScale(Vector3.one * 0.1f, 0.75f, 10, 1);*/
+
+        if (_scoreUISpawnLocation != null)
+        {
+            RectTransform _canvasRect = _canvas.GetComponent<RectTransform>();
+
+            Vector2 ViewportPosition = Camera.main.WorldToViewportPoint(_scoreUISpawnLocation);
+            Vector2 WorldObject_ScreenPosition = new Vector2(
+                ((ViewportPosition.x * _canvasRect.sizeDelta.x) - (_canvasRect.sizeDelta.x * 0.5f)),
+                ((ViewportPosition.y * _canvasRect.sizeDelta.y) - (_canvasRect.sizeDelta.y * 0.5f))
+            );
+
+            //now you can set the position of the ui element
+            //UI_Element.anchoredPosition = WorldObject_ScreenPosition;
+
+            //Vector2 _screenLoc = Camera.main.WorldToViewportPoint(_scoreUISpawnLocation);
+            GameObject go = GameObject.Instantiate(_FloatText, WorldObject_ScreenPosition, Quaternion.identity);
+            go.transform.parent = _canvas.transform;
+
+            Text _text = go.GetComponent<Text>();
+            if (_scoreParam < 0)
+            {
+                _text.text = "-" + _scoreParam.ToString();
+            }
+            else
+            {
+                _text.text = "+" + _scoreParam.ToString();
+            }
+
+
+            RectTransform _goRect = go.GetComponent<RectTransform>();
+            _goRect.anchoredPosition = WorldObject_ScreenPosition;
+
+            Sequence tweenSequence = DOTween.Sequence();
+
+            tweenSequence.Append(_goRect.DOAnchorPosY(_goRect.anchoredPosition.y + 20f, 0.1f).SetEase(Ease.OutSine));
+            tweenSequence.Join(_goRect.DOScale(_goRect.localScale * 1.75f, 0.1f));
+            tweenSequence.Append(_goRect.DOPunchScale(Vector3.one * 0.35f, 0.2f, 7, 0.4f));
+            tweenSequence.AppendInterval(0.2f);
+            tweenSequence.Append(_goRect.DOAnchorPos3D(_rect.anchoredPosition3D, 0.75f).SetEase(Ease.InCubic).OnComplete(() =>
+            {
+                Destroy(go);
+                _scoreTarget += _scoreParam;
+                _rect.DOComplete();
+                _rect.DOPunchScale(Vector3.one * 0.1f, 0.75f, 10, 1);
+            }));
+            tweenSequence.Play();
+            /*_goRect.DOPunchScale(Vector3.one * 0.2f, _tweenDuration, 7, 0);
+            _goRect.DOAnchorPos3D(_rect.anchoredPosition3D, _tweenDuration).OnComplete(() => { 
+                Destroy(go); 
+                _scoreTarget += _scoreParam;
+                _rect.DOComplete();
+                _rect.DOPunchScale(Vector3.one * 0.1f, 0.75f, 10, 1);
+            }).SetEase(Ease.OutQuad);*/
+        }
+
         //_scoreText.text = Mathf.Lerp(_score, _score + _scoreParam, 10f).ToString();
         //_score += _scoreParam;
         //_scoreText.DOText(_score.ToString(),1f);
@@ -54,7 +115,6 @@ public class Score : MonoBehaviour {
         {
             _score = Mathf.Lerp(_score, _scoreTarget, Time.deltaTime * 2.4f);
             //_score = Mathf.Ceil(_score);
-            print(_score);
             if (Mathf.Abs(_scoreTarget - _score) < 1)
             {
                 _score = _scoreTarget;
