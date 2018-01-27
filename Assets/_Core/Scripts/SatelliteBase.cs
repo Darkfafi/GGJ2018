@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-public class SatelliteBase : MonoBehaviour {
+public class SatelliteBase : MonoBehaviour, ILaunchable
+{
+    public Transform Visual { get { return visual; } }
 
-	public Transform visual;
+    [SerializeField]
+	private Transform visual;
 
 	public Vector3 orbitRotation;
 
@@ -15,7 +19,7 @@ public class SatelliteBase : MonoBehaviour {
 	{
 		DESTROYED,
         IN_ORBIT,
-		LAUNCHED
+		LAUNCHING
 	};
 
     public Modes mode
@@ -43,7 +47,7 @@ public class SatelliteBase : MonoBehaviour {
         }
     }
 
-    private Modes _mode;
+    private Modes _mode = Modes.MEO;
 
     private States _state = States.IN_ORBIT;
 
@@ -57,7 +61,7 @@ public class SatelliteBase : MonoBehaviour {
 		transform.Rotate(orbitRotation);
 		switch (_state)
 		{
-			case States.LAUNCHED:
+			case States.LAUNCHING:
 
 				break;
 
@@ -77,5 +81,10 @@ public class SatelliteBase : MonoBehaviour {
         if (_state != States.IN_ORBIT) { return null; }
         float desiredHeight = GameGlobals.GetHeightFor(mode);
         return visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
+    }
+
+    public void SetLaunchState(bool launchState)
+    {
+        _state = (launchState) ? States.LAUNCHING : States.IN_ORBIT;
     }
 }
