@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
     {
         for(int i = 0; i < v; i++)
         {
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.1f, 0.3f));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 0.8f));
             spawner.SpawnSatelite();
         }
     }
