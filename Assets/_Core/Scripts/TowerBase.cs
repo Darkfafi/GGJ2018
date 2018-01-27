@@ -17,15 +17,7 @@ public class TowerBase : MonoBehaviour
     [SerializeField]
     private GameObject towerModelInstance;
 
-	public enum Modes
-	{
-		HIGHER,
-		LOWER,
-		MEDIUM,
-		HIT
-	};
-
-	public Modes mode = Modes.MEDIUM;
+	public Modes mode = Modes.MEO;
 
 	public Transform emitter;
 
@@ -38,12 +30,12 @@ public class TowerBase : MonoBehaviour
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
-				if (mode == Modes.MEDIUM)
+				if (mode == Modes.MEO || mode == Modes.None)
 				{
                     HigherOrbit();
                     DoParticle(particleHigherOrbit);
 				}
-				else if (mode == Modes.LOWER)
+				else if (mode == Modes.LEO)
 				{
 					MediumOrbit();
                     DoParticle(particleHigherOrbit);
@@ -52,13 +44,13 @@ public class TowerBase : MonoBehaviour
 
 			if (Input.GetMouseButtonDown(1))
 			{
-				if (mode == Modes.MEDIUM)
+                if (mode == Modes.MEO || mode == Modes.None)
 				{
 					LowerOrbit();
                     DoParticle(particleLowerOrbit);
 
 				}
-				else if (mode == Modes.HIGHER)
+				else if (mode == Modes.HEO)
 				{
                     MediumOrbit();
                     DoParticle(particleLowerOrbit);
@@ -77,21 +69,21 @@ public class TowerBase : MonoBehaviour
 	void HigherOrbit()
 	{
 		Debug.Log("switching tower to high");
-		mode = Modes.HIGHER;
+        mode = Modes.HEO;
 //		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
 	}
 
 	void LowerOrbit()
 	{
 		Debug.Log("switching tower to low");
-		mode = Modes.LOWER;
+		mode = Modes.LEO;
 //		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
 	}
 
 	void MediumOrbit()
 	{
 		Debug.Log("switching tower to medium");
-		mode = Modes.MEDIUM;
+		mode = Modes.MEO;
 //		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
 	}
 

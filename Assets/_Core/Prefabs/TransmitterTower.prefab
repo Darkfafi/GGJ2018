@@ -142,7 +142,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166906028707928}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -150,7 +150,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 56d056fd0ee704db38561d477eed3a36, type: 2}
+  - {fileID: 2100000, guid: 9fd82932bca8da345b11c81d8af5bb8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -293,7 +293,7 @@ MonoBehaviour:
   particleLowerOrbit: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a,
     type: 2}
   towerModelInstance: {fileID: 1601787829869842}
-  mode: 0
+  mode: 2
   emitter: {fileID: 4596692775802318}
 --- !u!135 &135860181651236498
 SphereCollider:

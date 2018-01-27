@@ -773,11 +773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visual: {fileID: 4267337508310604}
   orbitRotation: {x: 0, y: 0, z: 0.2}
-  leo: {fileID: 4329938697692576}
-  meo: {fileID: 4658145368729952}
-  heo: {fileID: 4531708477330638}
-  lerpSpeed: 0.02
-  mode: 1
+  switchLaneDuration: 0.5
 --- !u!114 &114917120472105288
 MonoBehaviour:
   m_ObjectHideFlags: 1
