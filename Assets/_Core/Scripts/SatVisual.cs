@@ -10,6 +10,8 @@ public class SatVisual : MonoBehaviour {
 
 	public float lerpSpeed = 0.02f;
 
+	public Transform explosionPrefab;
+
 	void FixedUpdate () {
 		transform.position = Vector3.Lerp(transform.position, target.position, lerpSpeed);
 		transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, lerpSpeed);
@@ -39,6 +41,10 @@ public class SatVisual : MonoBehaviour {
 
 		if (coll.transform.GetComponent<SatVisual>())
 		{
+			Health.singleton.DoDamage(.1f);
+			KillSatellite(coll.transform);
+
+			/*
 			foreach (Transform t in transform)
 			{
 				KillSatellite(t);
@@ -48,7 +54,7 @@ public class SatVisual : MonoBehaviour {
 			{
 				KillSatellite(t);
 			}
-
+			*/
 		//	Destroy(coll.transform.gameObject);
 		//	Destroy(gameObject);
 		}
@@ -56,20 +62,8 @@ public class SatVisual : MonoBehaviour {
 
 	void KillSatellite(Transform t)
 	{
-
-		if (t.tag == "panel")
-		{
-			Destroy(t.gameObject);
-		}
-		else
-		{			
-			t.gameObject.AddComponent<SphereCollider>();
-			t.gameObject.AddComponent<Rigidbody>();
-			t.gameObject.GetComponent<TrailRenderer>().time = 1;
-		//	Destroy(t.gameObject, 5);
-			//t.parent = null;
-        //    Destroy(t.parent.gameObject, 2);
-		}
+		Transform explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as Transform;
+		Destroy(t.parent.gameObject);
 	}
 
 }
