@@ -668,7 +668,7 @@ TrailRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046554446803826}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192a9d6c4de2848fba96fcf319ae189e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visual: {fileID: 4267337508310604}
+  visual: {fileID: 114917120472105288}
   orbitRotation: {x: 0, y: 0, z: 0.2}
   switchLaneDuration: 0.5
 --- !u!114 &114917120472105288
@@ -790,6 +790,7 @@ MonoBehaviour:
   lerpSpeed: 0.02
   explosionPrefab: {fileID: 4947279748976158, guid: 012a7e527d4484ed2b683ac6b40edcd6,
     type: 2}
+  Killable: 1
 --- !u!135 &135097141346346958
 SphereCollider:
   m_ObjectHideFlags: 1
