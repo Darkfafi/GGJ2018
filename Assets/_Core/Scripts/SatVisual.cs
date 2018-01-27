@@ -8,18 +8,20 @@ public class SatVisual : MonoBehaviour {
 
 	public Transform satBase;
 
+	public float lerpSpeed = 0.02f;
 
 	void FixedUpdate () {
-		transform.position = Vector3.Lerp(transform.position, target.position, .2f);
-		transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, .2f);
+		transform.position = Vector3.Lerp(transform.position, target.position, lerpSpeed);
+		transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, lerpSpeed);
 	}
 
 	void OnTriggerStay(Collider coll)
 	{
 		if (coll.transform.GetComponent<TowerBase>())
 		{
+		//	Debug.Log("switching orbit height");
 			switch (coll.transform.GetComponent<TowerBase>().mode)
-			{
+			{				
 				case TowerBase.Modes.HIGHER:
 					satBase.GetComponent<SatBase>().mode = SatBase.Modes.HEO;
 					break;

@@ -5,6 +5,13 @@ using UnityEngine;
 public class TowerBase : MonoBehaviour
 {
 
+	Ray ray;
+
+	RaycastHit hit;
+
+	public LayerMask transmitterMask;
+	public LayerMask transmitterRangeMask;
+
 	public enum Modes
 	{
 		HIGHER,
@@ -15,47 +22,56 @@ public class TowerBase : MonoBehaviour
 
 	public Modes mode = Modes.MEDIUM;
 
-	void OnMouseOver()
+	void Update()
 	{
-		if (Input.GetMouseButtonDown(0))
+		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		if (Physics.Raycast(ray, out hit, 100, transmitterMask))
 		{
-			if (mode == Modes.LOWER)
+			if (Input.GetMouseButtonDown(0))
 			{
-				MediumOrbit();
+				if (mode == Modes.MEDIUM)
+				{
+                    HigherOrbit();
+				}
+				else if (mode == Modes.LOWER)
+				{
+					MediumOrbit();
+				}
+
+
 			}
 
-			if (mode == Modes.MEDIUM)
+			if (Input.GetMouseButtonDown(1))
 			{
-				HigherOrbit();
-			}
-		}
 
-		if (Input.GetMouseButtonDown(1))
-		{
-			if (mode == Modes.HIGHER)
-			{
-                MediumOrbit();
-			}
-
-			if (mode == Modes.MEDIUM)
-			{
-				LowerOrbit();
+				if (mode == Modes.MEDIUM)
+				{
+					LowerOrbit();
+				}
+				else if (mode == Modes.HIGHER)
+				{
+                    MediumOrbit();
+				}
 			}
 		}
 	}
 
 	void HigherOrbit()
 	{
+		Debug.Log("switching tower to high");
 		mode = Modes.HIGHER;
 	}
 
 	void LowerOrbit()
 	{
+		Debug.Log("switching tower to low");
 		mode = Modes.LOWER;
 	}
 
 	void MediumOrbit()
 	{
+		Debug.Log("switching tower to medium");
 		mode = Modes.MEDIUM;
 	}
 
@@ -68,9 +84,5 @@ public class TowerBase : MonoBehaviour
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

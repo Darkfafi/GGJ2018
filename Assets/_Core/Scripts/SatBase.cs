@@ -37,23 +37,21 @@ public class SatBase : MonoBehaviour {
 		{
 
 			case Modes.LEO:
-
 				visual.position = Vector3.Lerp(visual.position, leo.position, lerpSpeed);
 				visual.rotation = Quaternion.Lerp(visual.rotation, leo.rotation, lerpSpeed);
+			//	Debug.Log("switch orbit to low");
 				break;
 
 			case Modes.MEO:
 				visual.position = Vector3.Lerp(visual.position, meo.position, lerpSpeed);
 				visual.rotation = Quaternion.Lerp(visual.rotation, meo.rotation, lerpSpeed);
-
-
+			//	Debug.Log("switch orbit to medium");
 				break;
 
 			case Modes.HEO:
-
-					visual.position = Vector3.Lerp(visual.position, heo.position, lerpSpeed);
+				visual.position = Vector3.Lerp(visual.position, heo.position, lerpSpeed);
 				visual.rotation = Quaternion.Lerp(visual.rotation, heo.rotation, lerpSpeed);
-
+			//	Debug.Log("switch orbit to high");
 				break;
 
 			case Modes.LAUNCHED:
