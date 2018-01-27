@@ -22,7 +22,7 @@ public class SataliteSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnSatelite()
+    public void SpawnSatelite()
     {
         SatelliteBase sb = Instantiate(satelitePrefab, transform.position, Quaternion.identity);
         sb.transform.position = Center.transform.position;

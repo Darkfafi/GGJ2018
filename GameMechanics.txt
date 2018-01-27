@@ -15,7 +15,7 @@
 		
 **Rewards
 	Bringing down satilites increes score
-	Every satilite in orbit incresases score multiplier V
+	Every satilite in orbit incresases score multiplier
 	Building reward while having 'amount' of satilites active.
 
 **Punishment
@@ -67,6 +67,7 @@
 		
 	A kind of satilite that attacks the players towers
 		these satilites are ment to be destroyed
+	Click on Satellite, so it will ignore the next signal
 
 **Extras:
 	Implementation of missions/achievements. 
@@ -77,6 +78,7 @@
 			-destroy amount of ships
 			-Add orbit layer
 			-Serive for duration while having x amount of satilites active etc
+	
 			
 
 

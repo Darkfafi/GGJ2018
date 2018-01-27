@@ -20,7 +20,8 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
 	{
 		DESTROYED,
         IN_ORBIT,
-		LAUNCHING
+		LAUNCHING,
+        CLEAR
 	};
 
     public Modes mode
