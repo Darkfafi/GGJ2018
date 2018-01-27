@@ -19,5 +19,6 @@ public class ScoreTest : MonoBehaviour {
         {
             Score.Instance.AddScore(-100f);
         }
+
 	}
 }
