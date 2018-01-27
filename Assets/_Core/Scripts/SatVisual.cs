@@ -17,7 +17,7 @@ public class SatVisual : MonoBehaviour {
     private float delayTrail = 0;
     private bool trailActive = false;
 
-    private float newSignalCooldown = 1.5f;
+    private float newSignalCooldown = 2.5f;
     private float newSignalDelayCounter = 0;
 
     protected void Update()
@@ -52,8 +52,19 @@ public class SatVisual : MonoBehaviour {
             //	Debug.Log("switching orbit height");
             if (tb.mode != Modes.None && tb.mode != satBase.GetComponent<SatelliteBase>().mode)
             {
-                satBase.GetComponent<SatelliteBase>().mode = tb.mode;
-                newSignalDelayCounter = 0;
+                int l = System.Enum.GetValues(typeof(Modes)).Length;
+                int tbVal = (int)tb.mode;
+                int currentVal = (int)satBase.GetComponent<SatelliteBase>().mode;
+                if(tbVal < currentVal && currentVal > 1)
+                {
+                    satBase.GetComponent<SatelliteBase>().mode = (Modes)(currentVal - 1);
+                    newSignalDelayCounter = 0;
+                }
+                else if(tbVal > currentVal && currentVal < l - 1)
+                {
+                    satBase.GetComponent<SatelliteBase>().mode = (Modes)(currentVal + 1);
+                    newSignalDelayCounter = 0;
+                }
             }
 		}
 

@@ -28,10 +28,8 @@ public class SataliteSpawner : MonoBehaviour
         sb.transform.position = Center.transform.position;
         sb.Visual.transform.position = transform.position;
 
-        int rl = UnityEngine.Random.Range(1, 4);
-
         sb.transform.rotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360));
-        sb.mode = (Modes)rl;
-        launcher.SendToPointInSpace(sb, sb.transform.up, (Modes)rl, 3.2f);
+        sb.mode = Modes.HEO;
+        launcher.SendToPointInSpace(sb, sb.transform.up, Modes.HEO, 3.2f);
     }
 }

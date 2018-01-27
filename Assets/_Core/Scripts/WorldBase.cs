@@ -28,8 +28,27 @@ public class WorldBase : MonoBehaviour {
 
 
         //transform.DOScaleX(transform.localScale.x * 1.1f, 3f).SetLoops(-1);
-	}
+
+        DrawCircle c1 = new GameObject("<L1>").AddComponent<DrawCircle>();
+        DrawCircle c2 = new GameObject("<L2>").AddComponent<DrawCircle>();
+        DrawCircle c3 = new GameObject("<L3>").AddComponent<DrawCircle>();
+
+        c1.SetRadius(GameGlobals.GetHeightFor(Modes.LEO));
+        c2.SetRadius(GameGlobals.GetHeightFor(Modes.MEO));
+        c3.SetRadius(GameGlobals.GetHeightFor(Modes.HEO));
+
+        c1.SetLineColor(GetColorFor(Modes.LEO), 0.15f);
+        c2.SetLineColor(GetColorFor(Modes.MEO), 0.25f);
+        c3.SetLineColor(GetColorFor(Modes.HEO), 0.35f);
+    }
 	
+    private Color GetColorFor(Modes mode)
+    {
+        Color c = GameGlobals.GetColorFor(mode);
+        c.a = 0.15f;
+        return c;
+    }
+
 	// Update is called once per frame
 	void Update () {
 		

@@ -45,6 +45,11 @@ public class TowerBase : MonoBehaviour
                     SetOribitSignal(Modes.MEO);
                     DoParticle(particleHigherOrbit);
                 }
+                else if(mode == Modes.HEO)
+                {
+                    SetOribitSignal(Modes.LEO);
+                    DoParticle(particleHigherOrbit);
+                }
 			}
 
 			if (Input.GetMouseButtonDown(1))
@@ -60,6 +65,11 @@ public class TowerBase : MonoBehaviour
                     SetOribitSignal(Modes.MEO);
                     DoParticle(particleLowerOrbit);
                 }
+                else if(mode == Modes.LEO)
+                {
+                    SetOribitSignal(Modes.HEO);
+                    DoParticle(particleLowerOrbit);
+                }
 			}
 		}
 	}
@@ -73,7 +83,7 @@ public class TowerBase : MonoBehaviour
 
     private void SetOribitSignal(Modes mode)
     {
-        Debug.Log("switching tower to " + mode.ToString());
+        //Debug.Log("switching tower to " + mode.ToString());
         this.mode = mode;
         emitter.GetComponent<Renderer>().material.SetColor("_TintColor", GameGlobals.GetColorFor(mode));
     }

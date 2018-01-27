@@ -69,6 +69,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         mode = _mode;
         DoMovementToLane(mode);
         currentCircle = gameObject.AddComponent<DrawCircle>();
+        SetLine(mode);
     }
 
     protected void FixedUpdate () {
