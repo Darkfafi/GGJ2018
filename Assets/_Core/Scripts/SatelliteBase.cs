@@ -36,7 +36,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             Modes nm = value;
             // Move to height only if in orbit
             SetLine(nm);
-            if (_state == States.IN_ORBIT)
+            if (_state == States.IN_ORBIT && nm != Modes.None)
             {
                 DoMovementToLane(nm).OnComplete(() =>
                 {
@@ -46,6 +46,15 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             else
             {
                 _mode = nm;
+            }
+            if (_state == States.CLEAR && nm == Modes.None)
+            {
+                float desiredHeight = 20;
+                
+                Visual.DOLocalMoveY(desiredHeight, 5).OnComplete(()=> 
+                {
+                    Destroy(gameObject);
+                });
             }
         }
     }
@@ -87,8 +96,19 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
     private Tween DoMovementToLane(Modes mode)
     {
         if (_state != States.IN_ORBIT) { return null; }
+        Visual.DOComplete();
         float desiredHeight = GameGlobals.GetHeightFor(mode);
         return Visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
+    }
+
+    public void SetReleased()
+    {
+        Debug.Log("fdfd");
+        if (_state != States.IN_ORBIT) { return; }
+        _state = States.CLEAR;
+        Debug.Log("fdfd2");
+        mode = Modes.None;
+        Debug.Log("fdfd4");
     }
 
     public void SetLaunchState(bool launchState)
@@ -99,6 +119,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
 
     private void SetLine(Modes mode)
     {
+        if (mode == Modes.None || currentCircle == null) { return; }
         currentCircle.SetRadius(GameGlobals.GetHeightFor(mode));
         Color c = GameGlobals.GetColorFor(mode);
         c.a = 0.25f;
