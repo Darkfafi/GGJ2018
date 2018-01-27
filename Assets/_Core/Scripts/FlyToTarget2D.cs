@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using System.Collections;
 
 /// <summary>
@@ -83,4 +83,4 @@ public class PowerupGrab : MonoBehaviour
 			Destroy(gameObject);
 		}
     }
-}
+}*/
