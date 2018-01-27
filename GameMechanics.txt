@@ -1,0 +1,82 @@
+**Core Mechanic
+	Send out signals
+	Change sattilite altitude
+	Time-->score
+	Survive
+
+**Extra mechanics
+	Time/Score will charge special ability. 
+		Ability will add a layer in orbit. Giving more space to work with. In addition this function 
+		will allow you to 
+		
+		Tap enemie ships to shoot them. Buils up charges to shoot.
+
+		Verschillende 
+		
+**Rewards
+	Bringing down satilites increes score
+	Every satilite in orbit incresases score multiplier
+	Building reward while having 'amount' of satilites active.
+
+**Punishment
+	Bringing down wrong satilite can have two effects
+		-Creating space debree wich will hinder you for a certain amount of time.
+		-Crashing down to earth and having the chance to hitting your towers wich will the result in either 
+		malfunction(having reversed effect) or disabling the tower. 
+		
+		!!Feedback for player is very impoortant here!!
+		
+
+**Progression
+	Progression is driven by time. The longer you stay alive the more progress you make. Meaning the game
+	will get harder as you stay alive longer. 
+
+	Progression will introduce:
+		new size and sort of satilites
+		extra mechanics
+		
+
+**Emergence
+	*Mechanics: Modify to create emergent interactions		
+		-mechanics need to effect eachother correctly and cause bugs
+
+	*Dynamics: Combining mechanics.
+		"Note: Make sure not to combine to many mechanic to prevent bugs
+	
+	*Aestectics: increasing playfield
+
+	*Player feedback(feedback loops)
+		-Sound
+			spawning satilite/crashing/shooting lasers/sending signals/powerupbar rdy/use powerup/
+			
+		-Visual effects
+			use powerup/defect-malfunctioned towers/
+	
+
+**Satilites
+	Satilites that crash into eachother leave behind debree in space on multiple lanes
+
+	Satilite size: big ones cover more lanes/layers.
+		When big satilites crash debree will cover more lanes.
+		
+	Satilites can crash(%-based(maybe)) 
+		crashed satilites can disrupt signals from towers. 
+		crashed satilites can disable towers for periodic time.
+		Size of the satility can influence this effect.
+		If collision happens during a crash the hit satilite will fall aswel. (can cause chain reactions)
+		
+	A kind of satilite that attacks the players towers
+		these satilites are ment to be destroyed
+
+**Extras:
+	Implementation of missions/achievements. 
+		Achievements should speak for itself. Its a personal award for doing something. FOr example
+		having 5 satilites in the air.
+
+		Mission can be objectives generated randomly that can grand bonus points to your score
+			-destroy amount of ships
+			-Add orbit layer
+			-Serive for duration while having x amount of satilites active etc
+			
+
+
