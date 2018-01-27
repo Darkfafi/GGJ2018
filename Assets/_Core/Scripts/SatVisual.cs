@@ -18,7 +18,7 @@ public class SatVisual : MonoBehaviour {
 	void OnTriggerStay(Collider coll)
 	{
 		if (coll.transform.GetComponent<TowerBase>())
-		{
+		{			
 		//	Debug.Log("switching orbit height");
 			switch (coll.transform.GetComponent<TowerBase>().mode)
 			{				
@@ -35,7 +35,6 @@ public class SatVisual : MonoBehaviour {
 					break;
 
 			}
-
 		}
 	}
 }

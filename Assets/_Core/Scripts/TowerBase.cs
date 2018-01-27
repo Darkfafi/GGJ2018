@@ -26,10 +26,12 @@ public class TowerBase : MonoBehaviour
 	{
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-		if (Physics.Raycast(ray, out hit, 100, transmitterMask))
+		if (Physics.Raycast(ray, out hit, 1000, transmitterMask))
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
+				Debug.Log("tower");
+
 				if (mode == Modes.MEDIUM)
 				{
                     HigherOrbit();
@@ -44,6 +46,8 @@ public class TowerBase : MonoBehaviour
 
 			if (Input.GetMouseButtonDown(1))
 			{
+
+					Debug.Log("tower");
 
 				if (mode == Modes.MEDIUM)
 				{
