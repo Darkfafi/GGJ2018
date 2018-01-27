@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class SatVisual : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public Transform target;
+
+
+	void FixedUpdate () {
+		transform.position = Vector3.Lerp(transform.position, target.position, .2f);
+		transform.rotation = Quaternion.Lerp(transform.rotation, target.rotation, .2f);
 	}
 }
