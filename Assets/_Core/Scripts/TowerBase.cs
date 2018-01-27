@@ -71,21 +71,21 @@ public class TowerBase : MonoBehaviour
 	{
 		Debug.Log("switching tower to high");
 		mode = Modes.HIGHER;
-		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
+//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
 	}
 
 	void LowerOrbit()
 	{
 		Debug.Log("switching tower to low");
 		mode = Modes.LOWER;
-		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
+//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
 	}
 
 	void MediumOrbit()
 	{
 		Debug.Log("switching tower to medium");
 		mode = Modes.MEDIUM;
-		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
+//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
 	}
 
 	void OnMouseExit()
