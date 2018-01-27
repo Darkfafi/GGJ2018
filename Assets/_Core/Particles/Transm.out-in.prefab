@@ -60,7 +60,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1986047957878316}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 1.5
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -856,14 +856,14 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 2
           time: 0
-          value: 0.36800003
+          value: 1
           inSlope: 0
-          outSlope: -0.36800003
+          outSlope: -1
           tangentMode: 69
         - serializedVersion: 2
           time: 1
           value: 0
-          inSlope: -0.36800003
+          inSlope: -1
           outSlope: 0.3994118
           tangentMode: 69
         m_PreInfinity: 2
