@@ -36,5 +36,39 @@ public class SatVisual : MonoBehaviour {
 
 			}
 		}
+
+		if (coll.transform.GetComponent<SatVisual>())
+		{
+			foreach (Transform t in transform)
+			{
+				KillSatellite(t);
+			}
+
+			foreach (Transform t in coll.transform)
+			{
+				KillSatellite(t);
+			}
+
+		//	Destroy(coll.transform.gameObject);
+		//	Destroy(gameObject);
+		}
 	}
+
+	void KillSatellite(Transform t)
+	{
+
+		if (t.tag == "panel")
+		{
+			Destroy(t.gameObject);
+		}
+		else
+		{			
+			t.gameObject.AddComponent<SphereCollider>();
+			t.gameObject.AddComponent<Rigidbody>();
+			Destroy(t.gameObject, 5);
+			//t.parent = null;
+            Destroy(t.parent.gameObject, 2);
+		}
+	}
+
 }

@@ -25,10 +25,6 @@ public class SatelliteBase : MonoBehaviour {
 
 	public Modes mode;
 
-	void Start () {
-		
-	}
-
 	void FixedUpdate () {
 
 		transform.Rotate(orbitRotation);
@@ -67,6 +63,5 @@ public class SatelliteBase : MonoBehaviour {
 				break;
 
 		}
-
 	}
 }

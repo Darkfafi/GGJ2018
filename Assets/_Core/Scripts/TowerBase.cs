@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TowerBase : MonoBehaviour
 {
-
 	Ray ray;
 
 	RaycastHit hit;
@@ -22,6 +21,8 @@ public class TowerBase : MonoBehaviour
 
 	public Modes mode = Modes.MEDIUM;
 
+	public Transform emitter;
+
 	void Update()
 	{
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -30,7 +31,7 @@ public class TowerBase : MonoBehaviour
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
-				Debug.Log("tower");
+				
 
 				if (mode == Modes.MEDIUM)
 				{
@@ -40,14 +41,11 @@ public class TowerBase : MonoBehaviour
 				{
 					MediumOrbit();
 				}
-
-
 			}
 
 			if (Input.GetMouseButtonDown(1))
 			{
-
-					Debug.Log("tower");
+					
 
 				if (mode == Modes.MEDIUM)
 				{
@@ -65,20 +63,22 @@ public class TowerBase : MonoBehaviour
 	{
 		Debug.Log("switching tower to high");
 		mode = Modes.HIGHER;
+		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
 	}
 
 	void LowerOrbit()
 	{
 		Debug.Log("switching tower to low");
 		mode = Modes.LOWER;
+		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
 	}
 
 	void MediumOrbit()
 	{
 		Debug.Log("switching tower to medium");
 		mode = Modes.MEDIUM;
+		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
 	}
-
 
 	void OnMouseExit()
 	{
@@ -88,5 +88,4 @@ public class TowerBase : MonoBehaviour
 	void Start () {
 		
 	}
-
 }
