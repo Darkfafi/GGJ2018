@@ -10,6 +10,8 @@
 		will allow you to 
 		
 		Tap enemie ships to shoot them. Buils up charges to shoot.
+
+		Verschillende 
 		
 **Rewards
 	Bringing down satilites increes score
@@ -35,19 +37,20 @@
 		
 
 **Emergence
-	--What is:
-	--In philosophy, systems theory, science, and art, emergence is a
-	--phenomenon whereby larger entities arise through interactions
-	--among smaller or simpler entities such that the larger entities exhibit
-	--properties the smaller/simpler entities do not exhibit. (Wikipedia)
-	--Short: Simple rules combining, leading to complexity through
-	--interactions 
-	
 	*Mechanics: Modify to create emergent interactions		
+		-mechanics need to effect eachother correctly and cause bugs
 
-	*Dynamics: Combining mechanics
+	*Dynamics: Combining mechanics.
+		"Note: Make sure not to combine to many mechanic to prevent bugs
 	
 	*Aestectics: increasing playfield
+
+	*Player feedback(feedback loops)
+		-Sound
+			spawning satilite/crashing/shooting lasers/sending signals/powerupbar rdy/use powerup/
+			
+		-Visual effects
+			use powerup/defect-malfunctioned towers/
 	
 
 **Satilites
