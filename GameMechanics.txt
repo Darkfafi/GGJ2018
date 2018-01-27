@@ -141,3 +141,11 @@ Score is vet en totaal niet stored. De font is ook goed.
 Shockwave is een dilemma gevalltje. Wil je de shockwave zelf in de hand hebben of niet..? Brengt allebei interesante gameplay aspecten
 
 Belangrijk: tutorial fase & Menu. hitbox op tower
+
+
+
+
+**Game Design Changes
+	-Colors of orbit lanes from red-green-blue to blue-green-red. The outer cirkel(red) is a dangerous 1 wich you want to prevent being 
+	in as the sattilites spawn randomly on the red cirkel. We also launch the sattilites in the outter cirkel because in the end you wanna have as much
+	sattilites in the outter cirkel be4 the shockwave hits. 
