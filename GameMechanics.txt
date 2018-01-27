@@ -12,11 +12,15 @@
 		Tap enemie ships to shoot them. Buils up charges to shoot.
 
 		Verschillende 
+
+**High Level Concept
+	Je moet zoveel mogelijk ruimteschepen de lucht in sturen, om contact te maken met aliens.
 		
 **Rewards
 	Bringing down satilites increes score
 	Every satilite in orbit incresases score multiplier
 	Building reward while having 'amount' of satilites active.
+	killing enemy with satalite gives more bonus points because you offer score resources to safe yourself. basicly.
 
 **Punishment
 	Bringing down wrong satilite can have two effects
@@ -67,7 +71,6 @@
 		
 	A kind of satilite that attacks the players towers
 		these satilites are ment to be destroyed
-	Click on Satellite, so it will ignore the next signal
 
 **Extras:
 	Implementation of missions/achievements. 
@@ -78,7 +81,6 @@
 			-destroy amount of ships
 			-Add orbit layer
 			-Serive for duration while having x amount of satilites active etc
-	
 			
 
 
