@@ -128,23 +128,16 @@ werkt prima, probeer wel nog op de satelieten te klikken ipv de torens. Maar daa
 
 Ideas-open
 
-Test Case 3:
-Menu-thoughts
 
-Score-thoughts
-
-Mechanics-thoughts
-
-Ideas-open
 
 
 -Evaluatie
 Menu kan er wel eme door. Maar kan het best een soort reskin gebruiken.
 
-Core mechanic werkt soepl en duidelijk. Moet wel in een soort tutorial fase verduidelijkt worden.
+Core mechanic werkt soepl en duidelijk. Moet wel in een soort tutorial fase verduidelijkt worden. Bolletjes om op te kliken heeft kleine hitbox
 
 Score is vet en totaal niet stored. De font is ook goed.
 
 Shockwave is een dilemma gevalltje. Wil je de shockwave zelf in de hand hebben of niet..? Brengt allebei interesante gameplay aspecten
 
-Belangrijk: tutorial fase & Menu
+Belangrijk: tutorial fase & Menu. hitbox op tower
