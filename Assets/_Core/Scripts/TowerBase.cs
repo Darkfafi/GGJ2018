@@ -11,6 +11,9 @@ public class TowerBase : MonoBehaviour
 	public LayerMask transmitterMask;
 	public LayerMask transmitterRangeMask;
 
+	public Transform particleHigherOrbit;
+	public Transform particleLowerOrbit;
+
 	public enum Modes
 	{
 		HIGHER,
@@ -36,10 +39,12 @@ public class TowerBase : MonoBehaviour
 				if (mode == Modes.MEDIUM)
 				{
                     HigherOrbit();
+					Transform t = Instantiate(particleHigherOrbit, emitter.position, emitter.rotation);
 				}
 				else if (mode == Modes.LOWER)
 				{
 					MediumOrbit();
+					Transform t = Instantiate(particleHigherOrbit, emitter.position, emitter.rotation);
 				}
 			}
 
@@ -50,10 +55,13 @@ public class TowerBase : MonoBehaviour
 				if (mode == Modes.MEDIUM)
 				{
 					LowerOrbit();
+					Transform t = Instantiate(particleLowerOrbit, emitter.position, emitter.rotation);
+
 				}
 				else if (mode == Modes.HIGHER)
 				{
                     MediumOrbit();
+					Transform t = Instantiate(particleLowerOrbit, emitter.position, emitter.rotation);
 				}
 			}
 		}

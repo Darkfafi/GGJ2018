@@ -65,9 +65,10 @@ public class SatVisual : MonoBehaviour {
 		{			
 			t.gameObject.AddComponent<SphereCollider>();
 			t.gameObject.AddComponent<Rigidbody>();
-			Destroy(t.gameObject, 5);
+			t.gameObject.GetComponent<TrailRenderer>().time = 1;
+		//	Destroy(t.gameObject, 5);
 			//t.parent = null;
-            Destroy(t.parent.gameObject, 2);
+        //    Destroy(t.parent.gameObject, 2);
 		}
 	}
 
