@@ -8,8 +8,8 @@ public class WorldBase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Vector3 oldScale = transform.localScale;
-        float percentage = 0.08f;
-        float time = 7f;
+        float percentage = 0.03f;
+        float time = 6f;
 
         transform.localScale = new Vector3(oldScale.x * (1 - percentage), oldScale.y * (1 - percentage), oldScale.z * (1 - percentage));
 
