@@ -113,6 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream:Assets/_Core/Scenes/ParticleTestScene.unity
 --- !u!1 &559749884
 GameObject:
   m_ObjectHideFlags: 0
@@ -7228,6 +7229,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+--- !u!1001 &733426375
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.4278145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.9518967
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.429
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5bdba8d7f833c4757848b8f1581bdd9a, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> Stashed changes:Assets/_Core/Scenes/ParticleForTowerTransmission.unity
 --- !u!1 &1411424052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7308,14 +7353,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+<<<<<<< Updated upstream:Assets/_Core/Scenes/ParticleTestScene.unity
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1620348525
+=======
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1672920160
+>>>>>>> Stashed changes:Assets/_Core/Scenes/ParticleForTowerTransmission.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< Updated upstream:Assets/_Core/Scenes/ParticleTestScene.unity
     - target: {fileID: 400004, guid: d8c41be67f41aa545ae053b0b927f821, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7458,4 +7509,40 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8c41be67f41aa545ae053b0b927f821, type: 2}
+=======
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.4278145
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.9518967
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.429
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435011749483690, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f3c38cbaf7b034a46a828f15bc5b6737, type: 2}
+>>>>>>> Stashed changes:Assets/_Core/Scenes/ParticleForTowerTransmission.unity
   m_IsPrefabParent: 0
