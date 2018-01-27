@@ -24,7 +24,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.87474656, g: 0.52205884, b: 1, a: 1}
     m_PressedColor: {r: 1, g: 0.8088235, b: 0.9630832, a: 1}
     m_DisabledColor: {r: 0.56114835, g: 0.6628893, b: 0.71323526, a: 1}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 5
     m_FadeDuration: 2
   font: {fileID: 12800000, guid: da6e36e0361c54e65aebc9577d426a85, type: 3}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0.9117647, g: 0.9117647, b: 0.9117647, a: 1}
