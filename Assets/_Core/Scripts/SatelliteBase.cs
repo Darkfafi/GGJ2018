@@ -6,10 +6,10 @@ using System;
 
 public class SatelliteBase : MonoBehaviour, ILaunchable
 {
-    public Transform Visual { get { return visual; } }
+    public Transform Visual { get { return visual.transform; } }
 
     [SerializeField]
-	private Transform visual;
+	private SatVisual visual;
 
 	public Vector3 orbitRotation;
 
@@ -47,12 +47,14 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         }
     }
 
+    [SerializeField]
     private Modes _mode = Modes.MEO;
 
     private States _state = States.IN_ORBIT;
 
     protected void Awake()
     {
+        mode = _mode;
         DoMovementToLane(mode);
     }
 
@@ -80,11 +82,12 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
     {
         if (_state != States.IN_ORBIT) { return null; }
         float desiredHeight = GameGlobals.GetHeightFor(mode);
-        return visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
+        return Visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
     }
 
     public void SetLaunchState(bool launchState)
     {
         _state = (launchState) ? States.LAUNCHING : States.IN_ORBIT;
+        visual.Killable = (_state == States.IN_ORBIT);
     }
 }

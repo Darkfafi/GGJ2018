@@ -12,6 +12,25 @@ public class SatVisual : MonoBehaviour {
 
 	public Transform explosionPrefab;
 
+    public bool Killable = true;
+
+    private float delayTrail = 0;
+    private bool trailActive = false;
+
+    protected void Update()
+    {
+        if (!trailActive)
+        {
+            delayTrail += Time.deltaTime; 
+            if (delayTrail > 0.1f)
+            {
+                GetComponent<TrailRenderer>().Clear();
+                GetComponent<TrailRenderer>().enabled = true;
+                trailActive = true;
+            }
+        }
+    }
+
 	void OnTriggerStay(Collider coll)
 	{
         TowerBase tb = coll.transform.GetComponent<TowerBase>();
@@ -26,8 +45,11 @@ public class SatVisual : MonoBehaviour {
 
 		if (coll.transform.GetComponent<SatVisual>())
 		{
-			Health.singleton.DoDamage(.1f);
-			KillSatellite(coll.transform);
+            if (Killable)
+            {
+                Health.singleton.DoDamage(.1f);
+                KillSatellite(coll.transform);
+            }
 
 			/*
 			foreach (Transform t in transform)
