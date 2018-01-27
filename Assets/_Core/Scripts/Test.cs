@@ -11,6 +11,7 @@ public class Test : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             transform.DOMoveX(1, 1.2f).SetEase(Ease.OutBack).OnComplete(()=> { GetComponent<SpriteRenderer>().DOColor(Color.red, 1).SetEase(Ease.OutBounce); });
+
         }
     }
 
