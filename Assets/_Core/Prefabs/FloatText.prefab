@@ -49,11 +49,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: da6e36e0361c54e65aebc9577d426a85, type: 3}
-    m_FontSize: 25
+    m_FontSize: 31
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 207
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -80,8 +80,8 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.45456594, y: 0.485}
+  m_AnchorMax: {x: 0.5553957, y: 0.53300005}
+  m_AnchoredPosition: {x: -0.10000038, y: 0}
+  m_SizeDelta: {x: -0.10000038, y: 0.10000038}
   m_Pivot: {x: 0.5, y: 0.5}

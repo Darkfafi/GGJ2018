@@ -64,8 +64,9 @@ public class Score : MonoBehaviour {
             //UI_Element.anchoredPosition = WorldObject_ScreenPosition;
 
             //Vector2 _screenLoc = Camera.main.WorldToViewportPoint(_scoreUISpawnLocation);
-            GameObject go = GameObject.Instantiate(_FloatText, WorldObject_ScreenPosition, Quaternion.identity);
-            go.transform.parent = _canvas.transform;
+            GameObject go = GameObject.Instantiate(_FloatText);
+            go.transform.SetParent(_canvas.transform, false);
+
 
             Text _text = go.GetComponent<Text>();
             if (_scoreParam < 0)
@@ -83,11 +84,12 @@ public class Score : MonoBehaviour {
 
             Sequence tweenSequence = DOTween.Sequence();
 
-            tweenSequence.Append(_goRect.DOAnchorPosY(_goRect.anchoredPosition.y + 20f, 0.1f).SetEase(Ease.OutSine));
-            tweenSequence.Join(_goRect.DOScale(_goRect.localScale * 1.75f, 0.1f));
-            tweenSequence.Append(_goRect.DOPunchScale(Vector3.one * 0.35f, 0.2f, 7, 0.4f));
+            _goRect.localScale = Vector3.zero;
+            tweenSequence.Append(_goRect.DOMoveY(_goRect.transform.position.y + 40f, 0.2f).SetEase(Ease.OutSine));
+            tweenSequence.Join(_goRect.DOScale(Vector3.one, 0.2f));
+            tweenSequence.Append(_goRect.DOPunchScale(Vector3.one * 0.5f, 0.2f, 7, 0.4f));
             tweenSequence.AppendInterval(0.2f);
-            tweenSequence.Append(_goRect.DOAnchorPos3D(_rect.anchoredPosition3D, 0.75f).SetEase(Ease.InCubic).OnComplete(() =>
+            tweenSequence.Append(_goRect.DOMove(_rect.transform.position, 0.75f).SetEase(Ease.InCubic).OnComplete(() =>
             {
                 Destroy(go);
                 _scoreTarget += _scoreParam;
