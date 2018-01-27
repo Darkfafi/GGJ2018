@@ -7,7 +7,7 @@ public class WorldBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Vector3 oldScale = transform.localScale;
+        /*Vector3 oldScale = transform.localScale;
         float percentage = 0.03f;
         float time = 6f;
 

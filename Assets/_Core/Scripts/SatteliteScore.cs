@@ -17,6 +17,7 @@ public class SatteliteScore : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        return;
         _currentTime += Time.deltaTime;
         if (_currentTime >= _timeToNextScore)
         {
