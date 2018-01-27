@@ -14,6 +14,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
 	public Vector3 orbitRotation;
 
 	public float switchLaneDuration = 0.5f;
+    private DrawCircle currentCircle;
 
 	public enum States
 	{
@@ -33,6 +34,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             if (_mode == value) { return; }
             Modes nm = value;
             // Move to height only if in orbit
+            SetLine(nm);
             if (_state == States.IN_ORBIT)
             {
                 DoMovementToLane(nm).OnComplete(() =>
@@ -56,11 +58,12 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
     {
         mode = _mode;
         DoMovementToLane(mode);
+        currentCircle = gameObject.AddComponent<DrawCircle>();
     }
 
-	protected void FixedUpdate () {
+    protected void FixedUpdate () {
 
-		transform.Rotate(orbitRotation);
+
 		switch (_state)
 		{
 			case States.LAUNCHING:
@@ -70,8 +73,10 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
 			case States.DESTROYED:
 
 				break;
-
-			default:
+            case States.IN_ORBIT:
+                transform.Rotate(orbitRotation);
+                break;
+            default:
 
 				break;
 
@@ -89,5 +94,13 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
     {
         _state = (launchState) ? States.LAUNCHING : States.IN_ORBIT;
         visual.Killable = (_state == States.IN_ORBIT);
+    }
+
+    private void SetLine(Modes mode)
+    {
+        currentCircle.SetRadius(GameGlobals.GetHeightFor(mode));
+        Color c = GameGlobals.GetColorFor(mode);
+        c.a = 0.25f;
+        currentCircle.SetLineColor(c, 0.15f);
     }
 }

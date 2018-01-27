@@ -17,11 +17,11 @@ public class GameGlobals : ScriptableObject
         switch(mode)
         {
             case Modes.LEO:
-                return 6;
+                return 7.5f;
             case Modes.MEO:
-                return 8;
+                return 9.5f;
             case Modes.HEO:
-                return 10;
+                return 11.5f;
         }
 
         return -1;
@@ -33,13 +33,13 @@ public class GameGlobals : ScriptableObject
         switch (mode)
         {
             case Modes.LEO:
-                ColorUtility.TryParseHtmlString("#F7F39A", out c);
+                ColorUtility.TryParseHtmlString("#FF0000", out c);
                 break;
             case Modes.MEO:
-                ColorUtility.TryParseHtmlString("#A3DE83", out c);
+                ColorUtility.TryParseHtmlString("#00FF00", out c);
                 break;
             case Modes.HEO:
-                ColorUtility.TryParseHtmlString("#239D60", out c);
+                ColorUtility.TryParseHtmlString("#0000FF", out c);
                 break;
         }
 
