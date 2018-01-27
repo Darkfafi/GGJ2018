@@ -22,13 +22,16 @@ public class SataliteSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnSatelite()
+    public void SpawnSatelite()
     {
-        SatelliteBase sb = Instantiate(satelitePrefab, transform.position, transform.rotation);
+        SatelliteBase sb = Instantiate(satelitePrefab, transform.position, Quaternion.identity);
+        sb.transform.position = Center.transform.position;
         sb.Visual.transform.position = transform.position;
 
-        Vector3 randomAngleVec = new Vector3(UnityEngine.Random.Range(-5, 5), 5, UnityEngine.Random.Range(-5, 5));
+        int rl = UnityEngine.Random.Range(1, 4);
 
-        launcher.SendToPointInSpace(sb, randomAngleVec, Modes.MEO, 3);
+        sb.transform.rotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360));
+        sb.mode = (Modes)rl;
+        launcher.SendToPointInSpace(sb, sb.transform.up, (Modes)rl, 3.2f);
     }
 }

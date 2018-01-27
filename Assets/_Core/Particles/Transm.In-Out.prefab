@@ -903,12 +903,12 @@ ParticleSystem:
           time: 0
           value: 0.001421541
           inSlope: 0
-          outSlope: 0.37526008
+          outSlope: 0.9985784
           tangentMode: 69
         - serializedVersion: 2
           time: 1
-          value: 0.37668163
-          inSlope: 0.37526008
+          value: 1
+          inSlope: 0.9985784
           outSlope: 0.3994118
           tangentMode: 69
         m_PreInfinity: 2

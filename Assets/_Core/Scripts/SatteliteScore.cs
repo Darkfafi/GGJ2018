@@ -21,7 +21,6 @@ public class SatteliteScore : MonoBehaviour {
         if (_currentTime >= _timeToNextScore)
         {
             Score.Instance.AddScore(_scoreToAdd, _satVisual.gameObject.transform.position);
-            print(_satVisual.gameObject.transform.position);
             _currentTime = 0;
         }
     }
