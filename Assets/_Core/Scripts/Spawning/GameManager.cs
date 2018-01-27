@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     protected void Awake()
     {
-        OuterRing();
+        //OuterRing();
     }
 
     protected void Update()
@@ -48,8 +48,15 @@ public class GameManager : MonoBehaviour
     {
         outerRingTime = 0;
         outerRingDelay = UnityEngine.Random.Range(8f, 16f);
+        Vector3 oldScale = center.transform.localScale;
 
-        center.transform.DOShakeScale(4f, 0.2f).SetDelay(outerRingTime - 7f);
+        Sequence tweenSequence = DOTween.Sequence();
+
+        tweenSequence.AppendInterval(outerRingDelay - 3f);
+        tweenSequence.Append(center.transform.DOScale(oldScale * 0.85f, 2f).SetEase(Ease.InCirc).OnComplete(() => { WaarIsSimon(); }));
+        tweenSequence.Append(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
+        tweenSequence.Play();
+        /*center.transform.DOShakeScale(4f, 0.2f).SetDelay(outerRingTime - 7f);
         center.transform.DOShakeScale(3f, 0.5f).OnComplete(() => {
 
             Vector3 os = center.localScale;
@@ -58,17 +65,20 @@ public class GameManager : MonoBehaviour
 
             center.transform.DOScale(os, 2f).SetEase(Ease.OutElastic);
 
-        }).SetDelay(outerRingDelay - 3f);
-            
+        }).SetDelay(outerRingDelay - 3f);*/
+    }
 
+    private void WaarIsSimon()
+    {
+        print("waar is simon");
         SatelliteBase[] allSatilites = FindObjectsOfType<SatelliteBase>();
-        
 
-        for(int i = 0; i < allSatilites.Length; i++)
+
+        for (int i = 0; i < allSatilites.Length; i++)
         {
             int cm = (int)allSatilites[i].mode;
             int l = Enum.GetValues(typeof(Modes)).Length;
-            if(cm == l - 1)
+            if (cm == l - 1)
             {
                 ReleaseSatellite(allSatilites[i]);
             }
@@ -82,6 +92,7 @@ public class GameManager : MonoBehaviour
     private void ReleaseSatellite(SatelliteBase sat)
     {
         sat.SetReleased();
+        Score.Instance.AddScore(100, sat.Visual.gameObject.transform.position);
     }
 
     private void SetNextLevel()
