@@ -21,7 +21,12 @@ public class TowerBase : MonoBehaviour
 
 	public Transform emitter;
 
-	void Update()
+    protected void Awake()
+    {
+        SetOribitSignal(mode);
+    }
+
+	protected void Update()
 	{
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Physics.Raycast(ray, out hit, 1000, transmitterMask);
@@ -32,12 +37,12 @@ public class TowerBase : MonoBehaviour
 			{
 				if (mode == Modes.MEO || mode == Modes.None)
 				{
-                    HigherOrbit();
+                    SetOribitSignal(Modes.HEO);
                     DoParticle(particleHigherOrbit);
 				}
 				else if (mode == Modes.LEO)
-				{
-					MediumOrbit();
+                {
+                    SetOribitSignal(Modes.MEO);
                     DoParticle(particleHigherOrbit);
                 }
 			}
@@ -45,14 +50,14 @@ public class TowerBase : MonoBehaviour
 			if (Input.GetMouseButtonDown(1))
 			{
                 if (mode == Modes.MEO || mode == Modes.None)
-				{
-					LowerOrbit();
+                {
+                    SetOribitSignal(Modes.LEO);
                     DoParticle(particleLowerOrbit);
 
 				}
 				else if (mode == Modes.HEO)
-				{
-                    MediumOrbit();
+                {
+                    SetOribitSignal(Modes.MEO);
                     DoParticle(particleLowerOrbit);
                 }
 			}
@@ -66,26 +71,12 @@ public class TowerBase : MonoBehaviour
         t.transform.localPosition = Vector3.zero;
     }
 
-	void HigherOrbit()
-	{
-		Debug.Log("switching tower to high");
-        mode = Modes.HEO;
-//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.3f);
-	}
-
-	void LowerOrbit()
-	{
-		Debug.Log("switching tower to low");
-		mode = Modes.LEO;
-//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.2f);
-	}
-
-	void MediumOrbit()
-	{
-		Debug.Log("switching tower to medium");
-		mode = Modes.MEO;
-//		emitter.GetComponent<Renderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.1f);
-	}
+    private void SetOribitSignal(Modes mode)
+    {
+        Debug.Log("switching tower to " + mode.ToString());
+        this.mode = mode;
+        emitter.GetComponent<Renderer>().material.SetColor("_TintColor", GameGlobals.GetColorFor(mode));
+    }
 
 	void OnMouseExit()
 	{

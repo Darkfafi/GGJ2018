@@ -6059,6 +6059,7 @@ MonoBehaviour:
   visual: {fileID: 1372153610}
   orbitRotation: {x: 0, y: 0, z: 0.2}
   switchLaneDuration: 0.7
+  _mode: 2
 --- !u!4 &1271934512
 Transform:
   m_ObjectHideFlags: 0
@@ -7246,6 +7247,7 @@ MonoBehaviour:
   visual: {fileID: 59235323}
   orbitRotation: {x: 0, y: 0, z: 0.2}
   switchLaneDuration: 0.7
+  _mode: 2
 --- !u!4 &2040971101
 Transform:
   m_ObjectHideFlags: 0

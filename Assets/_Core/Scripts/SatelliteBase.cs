@@ -47,12 +47,14 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         }
     }
 
+    [SerializeField]
     private Modes _mode = Modes.MEO;
 
     private States _state = States.IN_ORBIT;
 
     protected void Awake()
     {
+        mode = _mode;
         DoMovementToLane(mode);
     }
 
