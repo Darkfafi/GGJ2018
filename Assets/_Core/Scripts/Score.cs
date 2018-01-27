@@ -39,10 +39,8 @@ public class Score : MonoBehaviour {
             return _instance;
         }
     }
-	// Use this for initialization
-	void Start () {
-        
-	}
+	
+	
 
 
     public void AddScore(float _scoreParam, Vector3 _scoreUISpawnLocation = new Vector3())
