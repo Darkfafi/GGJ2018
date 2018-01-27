@@ -1,0 +1,43 @@
+**Core Mechanic
+	Send out signals
+	Change sattilite altitude
+	Time-->score
+	Survive
+
+**Extra mechanics
+
+**Satilites
+	Satilites that crash into eachother leave behind debree in space on multiple lanes
+
+	Satilite size: big ones cover more lanes/layers.
+		When big satilites crash debree will cover more lanes.
+		
+	Satilites can crash(%-based(maybe)) 
+		crashed satilites can disrupt signals from towers. 
+		crashed satilites can disable towers for periodic time.
+		Size of the satility can influence this effect.
+		If collision happens during a crash the hit satilite will fall aswel. (can cause chain reactions)
+		
+	A kind of satilite that attacks the players towers
+		these satilites are ment to be destroyed
+		
+	
+**Progression
+	Progression is driven by time. The longer you stay alive the more progress you make. Meaning the game
+	will get harder as you stay alive longer. 
+
+	Progression will introduce new size and sort of satilites
+
+**Emergence
+
+
+
+**Extras:
+	Implementation of missions/achievements. 
+		Achievements should speak for itself. Its a personal award for doing something. FOr example
+		having 5 satilites in the air.
+
+		Mission can be objectives generated randomly that can grand bonus points to your score
+
+
+
