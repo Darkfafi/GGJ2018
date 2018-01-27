@@ -41,8 +41,8 @@ public class Score : MonoBehaviour {
     }
 	// Use this for initialization
 	void Start () {
-        
-	}
+        AudioManager.Instance.PlaySound(SoundType.SndSignalUp);
+    }
 
 
     public void AddScore(float _scoreParam, Vector3 _scoreUISpawnLocation = new Vector3())
