@@ -566,6 +566,7 @@ MonoBehaviour:
     type: 2}
   particleLowerOrbit: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a,
     type: 2}
+  towerModelInstance: {fileID: 1904624677}
   mode: 0
   emitter: {fileID: 33507714}
 --- !u!135 &178575758
@@ -923,7 +924,7 @@ GameObject:
   - component: {fileID: 347035538}
   m_Layer: 0
   m_Name: tower
-  m_TagString: Untagged
+  m_TagString: TowerModel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1404,6 +1405,7 @@ MonoBehaviour:
     type: 2}
   particleLowerOrbit: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a,
     type: 2}
+  towerModelInstance: {fileID: 347035536}
   mode: 0
   emitter: {fileID: 807581300}
 --- !u!135 &617345609
@@ -6412,6 +6414,7 @@ MonoBehaviour:
     type: 2}
   particleLowerOrbit: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a,
     type: 2}
+  towerModelInstance: {fileID: 784976747}
   mode: 0
   emitter: {fileID: 1729202852}
 --- !u!135 &1527610151

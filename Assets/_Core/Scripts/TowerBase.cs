@@ -14,6 +14,9 @@ public class TowerBase : MonoBehaviour
 	public Transform particleHigherOrbit;
 	public Transform particleLowerOrbit;
 
+    [SerializeField]
+    private GameObject towerModelInstance;
+
 	public enum Modes
 	{
 		HIGHER,
@@ -29,43 +32,47 @@ public class TowerBase : MonoBehaviour
 	void Update()
 	{
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(ray, out hit, 1000, transmitterMask);
 
-		if (Physics.Raycast(ray, out hit, 1000, transmitterMask))
+        if (hit.collider != null && hit.collider.gameObject == towerModelInstance)
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
-				
-
 				if (mode == Modes.MEDIUM)
 				{
                     HigherOrbit();
-					Transform t = Instantiate(particleHigherOrbit, emitter.position, emitter.rotation);
+                    DoParticle(particleHigherOrbit);
 				}
 				else if (mode == Modes.LOWER)
 				{
 					MediumOrbit();
-					Transform t = Instantiate(particleHigherOrbit, emitter.position, emitter.rotation);
-				}
+                    DoParticle(particleHigherOrbit);
+                }
 			}
 
 			if (Input.GetMouseButtonDown(1))
 			{
-					
-
 				if (mode == Modes.MEDIUM)
 				{
 					LowerOrbit();
-					Transform t = Instantiate(particleLowerOrbit, emitter.position, emitter.rotation);
+                    DoParticle(particleLowerOrbit);
 
 				}
 				else if (mode == Modes.HIGHER)
 				{
                     MediumOrbit();
-					Transform t = Instantiate(particleLowerOrbit, emitter.position, emitter.rotation);
-				}
+                    DoParticle(particleLowerOrbit);
+                }
 			}
 		}
 	}
+
+
+    private void DoParticle(Transform particlePrefab)
+    {
+        Transform t = Instantiate(particlePrefab, emitter.transform);
+        t.transform.localPosition = Vector3.zero;
+    }
 
 	void HigherOrbit()
 	{

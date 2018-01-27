@@ -292,6 +292,7 @@ MonoBehaviour:
     type: 2}
   particleLowerOrbit: {fileID: 4527038301857668, guid: 5bdba8d7f833c4757848b8f1581bdd9a,
     type: 2}
+  towerModelInstance: {fileID: 1601787829869842}
   mode: 0
   emitter: {fileID: 4596692775802318}
 --- !u!135 &135860181651236498

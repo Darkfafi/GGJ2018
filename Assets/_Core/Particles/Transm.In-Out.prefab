@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4435011749483690}
   - component: {fileID: 198915195786963508}
   - component: {fileID: 199880960283418928}
+  - component: {fileID: 114276433259586662}
   m_Layer: 0
   m_Name: Transm.In-Out
   m_TagString: Untagged
@@ -34,13 +35,24 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887173194805086}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: 0, w: 0}
   m_LocalPosition: {x: -2.4278145, y: 1.9518967, z: -12.429}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 0, z: 90}
+--- !u!114 &114276433259586662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887173194805086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3267fc591aad3ff4b985ac7487f6439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198915195786963508
 ParticleSystem:
   m_ObjectHideFlags: 1
