@@ -103,12 +103,9 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
 
     public void SetReleased()
     {
-        Debug.Log("fdfd");
         if (_state != States.IN_ORBIT) { return; }
         _state = States.CLEAR;
-        Debug.Log("fdfd2");
         mode = Modes.None;
-        Debug.Log("fdfd4");
     }
 
     public void SetLaunchState(bool launchState)
