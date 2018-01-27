@@ -1896,7 +1896,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 1850931281}
-  center: {fileID: 992033752}
 --- !u!1 &1003779209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1950,7 @@ Transform:
   m_GameObject: {fileID: 1074823795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 25, y: 25, z: 35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2070,7 +2069,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -842392744
+  randomSeed: -1675255543
   InitialModule:
     serializedVersion: 3
     enabled: 1
