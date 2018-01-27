@@ -5,6 +5,15 @@ using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 
+/*
+public enum SfxType
+{
+    Damage,
+    Shoot,
+    Orbit
+}
+*/
+
 public class Score : MonoBehaviour {
     [SerializeField]
     private Text _scoreText = null;
@@ -44,6 +53,19 @@ public class Score : MonoBehaviour {
         
 	}
 
+    /*
+    public void PlaySound(SfxType type)
+    {
+        switch (type)
+        {
+            case SfxType.Damage:
+
+                break;
+            default:
+                break;
+        }
+    }*/
+
     public void AddScore(float _scoreParam, Vector3 _scoreUISpawnLocation = new Vector3())
     {
         /*_scoreTarget += _scoreParam;
@@ -71,7 +93,7 @@ public class Score : MonoBehaviour {
             Text _text = go.GetComponent<Text>();
             if (_scoreParam < 0)
             {
-                _text.text = "-" + _scoreParam.ToString();
+                _text.text = "" + _scoreParam.ToString();
             }
             else
             {

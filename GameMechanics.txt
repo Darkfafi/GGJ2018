@@ -15,7 +15,7 @@
 		
 **Rewards
 	Bringing down satilites increes score
-	Every satilite in orbit incresases score multiplier
+	Every satilite in orbit incresases score multiplier V
 	Building reward while having 'amount' of satilites active.
 
 **Punishment
