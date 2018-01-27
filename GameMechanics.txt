@@ -102,19 +102,29 @@ Goals:"
 			
 Test Case 1:
 Menu-thoughts
+casual simple. Niet special. Gwn chill
 
 Score-thoughts
+heel cool
+score naar linker bovenhiek kan dienen als negatieve feedback loop. Als hindernis wanneer je het heel goed doet
 
 Mechanics-thoughts
+Langzaam opbouwn. Weinig spawnen.Feedback op de torens en wat ze doen. Input player 'tutorial achtig'
+KLikken per toren de hele tijd wordt moeilijk. Vet irritant(verwachting)
+
+shockwave de player laten handelen. Omdat je dan conrole heb en startegie kan plannen. 
 
 Ideas-open
 
 Test Case 2:
 Menu-thoughts
+Geen fan van de glimmende randes. Paars in options niet mooi. Werkt wel prima
 
 Score-thoughts
+totaal niet storend, cool font. Valt alleen op na je af ben. Maar dat maakt neit veel uit.
 
 Mechanics-thoughts
+werkt prima, probeer wel nog op de satelieten te klikken ipv de torens. Maar daar ben ik snel weer bewust van.
 
 Ideas-open
 
@@ -128,4 +138,13 @@ Mechanics-thoughts
 Ideas-open
 
 
+-Evaluatie
+Menu kan er wel eme door. Maar kan het best een soort reskin gebruiken.
 
+Core mechanic werkt soepl en duidelijk. Moet wel in een soort tutorial fase verduidelijkt worden.
+
+Score is vet en totaal niet stored. De font is ook goed.
+
+Shockwave is een dilemma gevalltje. Wil je de shockwave zelf in de hand hebben of niet..? Brengt allebei interesante gameplay aspecten
+
+Belangrijk: tutorial fase & Menu
