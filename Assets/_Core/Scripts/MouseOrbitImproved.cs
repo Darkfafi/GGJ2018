@@ -21,6 +21,11 @@ public class MouseOrbitImproved : MonoBehaviour
 	float x = 0.0f;
 	float y = 0.0f;
 
+	public LayerMask planetMask;
+	Ray ray;
+
+	RaycastHit hit;
+
 	// Use this for initialization
 	void Start()
 	{

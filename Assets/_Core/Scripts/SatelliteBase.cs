@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SatBase : MonoBehaviour {
+public class SatelliteBase : MonoBehaviour {
 
 	public Transform visual;
 
@@ -24,10 +24,6 @@ public class SatBase : MonoBehaviour {
 	};
 
 	public Modes mode;
-
-	void Start () {
-		
-	}
 
 	void FixedUpdate () {
 
@@ -67,6 +63,5 @@ public class SatBase : MonoBehaviour {
 				break;
 
 		}
-
 	}
 }
