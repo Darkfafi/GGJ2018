@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SatBase : MonoBehaviour {
+public class SatelliteBase : MonoBehaviour {
 
 	public Transform visual;
 

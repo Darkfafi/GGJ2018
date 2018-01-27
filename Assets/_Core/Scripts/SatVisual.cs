@@ -23,15 +23,15 @@ public class SatVisual : MonoBehaviour {
 			switch (coll.transform.GetComponent<TowerBase>().mode)
 			{				
 				case TowerBase.Modes.HIGHER:
-					satBase.GetComponent<SatBase>().mode = SatBase.Modes.HEO;
+					satBase.GetComponent<SatelliteBase>().mode = SatelliteBase.Modes.HEO;
 					break;
 
 				case TowerBase.Modes.MEDIUM:
-					satBase.GetComponent<SatBase>().mode = SatBase.Modes.MEO;
+					satBase.GetComponent<SatelliteBase>().mode = SatelliteBase.Modes.MEO;
 					break;
 
 				case TowerBase.Modes.LOWER:
-					satBase.GetComponent<SatBase>().mode = SatBase.Modes.LEO;
+					satBase.GetComponent<SatelliteBase>().mode = SatelliteBase.Modes.LEO;
 					break;
 
 			}
