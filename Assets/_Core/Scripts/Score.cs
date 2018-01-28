@@ -87,8 +87,7 @@ public class Score : MonoBehaviour {
             tweenSequence.Append(_goRect.DOMoveY(_goRect.transform.position.y + 40f, 0.2f).SetEase(Ease.OutSine));
             tweenSequence.Join(_goRect.DOScale(Vector3.one, 0.2f));
             tweenSequence.Append(_goRect.DOPunchScale(Vector3.one * 0.5f, 0.2f, 7, 0.4f));
-            float r = (float)Random.Range(0, 100) / 1000f;
-            print(r); 
+            float r = (float)Random.Range(0, 100) / 500f;
             tweenSequence.AppendInterval(0.2f + r);
             tweenSequence.Append(_goRect.DOMove(_rect.transform.position, 0.75f).SetEase(Ease.InCubic).OnComplete(() =>
             {
