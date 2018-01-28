@@ -1,17 +1,40 @@
 fileFormatVersion: 2
-guid: 69af364f36190478f84897b0b7a74338
-timeCreated: 1517137720
+guid: 6773fc108b4ac48298e6eb9c7ffb3ee3
+timeCreated: 1517142288
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: phong6
-    2100002: phong5
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Asteroid_3
+    100000: polySurface1
+    100002: polySurface2
+    100004: polySurface3
+    100006: polySurface4
+    100008: polySurface5
+    100010: //RootNode
+    400000: polySurface1
+    400002: polySurface2
+    400004: polySurface3
+    400006: polySurface4
+    400008: polySurface5
+    400010: //RootNode
+    2100000: phong9
+    2100002: phong1
+    2100004: phong2
+    2300000: polySurface1
+    2300002: polySurface2
+    2300004: polySurface3
+    2300006: polySurface4
+    2300008: polySurface5
+    3300000: polySurface1
+    3300002: polySurface2
+    3300004: polySurface3
+    3300006: polySurface4
+    3300008: polySurface5
+    4300000: polySurface1
+    4300002: polySurface2
+    4300004: polySurface3
+    4300006: polySurface4
+    4300008: polySurface5
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -43,7 +66,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 20
+    globalScale: 25
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
