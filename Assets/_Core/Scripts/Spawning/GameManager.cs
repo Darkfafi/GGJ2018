@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     {
         oldScale = center.transform.localScale;
         //OuterRing();
-        AudioSystem.Instance.StopAudio(3);
-        AudioSystem.Instance.PlayAudio("OST", 3);
+        AudioSystem.Instance.StopAudio(AudioSystem.MUSIC_STATION);
+        AudioSystem.Instance.PlayAudio("OST", AudioSystem.MUSIC_STATION);
     }
 
     protected void Update()
@@ -184,11 +184,20 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnAmount(int v)
     {
+        Camera.main.DOFieldOfView(85, 2f).SetEase(Ease.OutQuad).OnComplete(
+            ()=> {
+
+                Camera.main.DOFieldOfView(65, 1.5f).SetEase(Ease.InOutQuad).SetDelay(0.5f);
+            });
+
         float angle = (360 / v) + UnityEngine.Random.Range(0, 360);
+        float tv = (v < 2) ? 0.7f : 0;
+
         for (int i = 0; i < v; i++)
         {
-            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 0.8f));
             spawner.SpawnSatelite(angle * (i + 1));
+            yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f + tv, 0.8f + tv));
+
         }
     }
 

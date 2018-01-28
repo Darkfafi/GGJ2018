@@ -22,6 +22,6 @@ public class SataliteSpawner : MonoBehaviour
 
         sb.transform.rotation = Quaternion.Euler(0, 0, rot); //  Quaternion.Euler(0, 0, UnityEngine.Random.Range(0, 360));
         sb.mode = Modes.HEO;
-        launcher.SendToPointInSpace(sb, sb.transform.up, Modes.HEO, 3.2f);
+        launcher.SendToPointInSpace(sb, sb.transform.up, Modes.HEO, 3.5f);
     }
 }
