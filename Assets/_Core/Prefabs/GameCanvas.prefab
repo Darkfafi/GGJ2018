@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 223916254836122322}
   - component: {fileID: 114771845586948640}
   - component: {fileID: 114528618008762694}
+  - component: {fileID: 114584563562945286}
+  - component: {fileID: 82660264586073162}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -188,6 +190,86 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!82 &82660264586073162
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525903029193596}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114006805367481868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -425,6 +507,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114584563562945286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525903029193596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6fbb8bd67776c4dadab22e8a829a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SndSignalUp: {fileID: 0}
+  SndSignalDown: {fileID: 0}
+  SndShootRocket: {fileID: 0}
+  SndImpactRocket: {fileID: 0}
+  SndSattiliteIdle: {fileID: 0}
+  SndSattiliteCrash: {fileID: 0}
+  SndSattiliteFalling: {fileID: 0}
+  SndShockwave: {fileID: 8300000, guid: ba43f8fc3fc0e448ebf3ef69c9c68f9d, type: 3}
+  SndGetPoints: {fileID: 0}
+  SndLosePoints: {fileID: 0}
+  SndMenuClick: {fileID: 0}
+  SndMenuIdle: {fileID: 0}
+  SndGameIdle: {fileID: 0}
+  SndEnemyIdle: {fileID: 0}
+  SndEnemyShoot: {fileID: 0}
+  SndEnemyCrash: {fileID: 0}
+  SndTowerDeactive: {fileID: 0}
+  SndTowerMalfunction: {fileID: 0}
+  SndTowerReActive: {fileID: 8300000, guid: dc1547c6b1b364212812b36ed7d0aca3, type: 3}
+  SndTowerReFuntion: {fileID: 0}
+  SndArnoldGetDown: {fileID: 0}
 --- !u!114 &114675139167357100
 MonoBehaviour:
   m_ObjectHideFlags: 1
