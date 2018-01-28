@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip SndArnoldGetDown = null;
 
-
+    [SerializeField]
     private AudioSource audioPlayer;
 
     public static AudioManager _instance;
@@ -98,7 +98,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioPlayer = GetComponent<AudioSource>();
+        
     }
     public void PlaySound(SoundType type)
     {

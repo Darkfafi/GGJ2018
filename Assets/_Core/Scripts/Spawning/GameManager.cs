@@ -53,7 +53,10 @@ public class GameManager : MonoBehaviour
         Sequence tweenSequence = DOTween.Sequence();
 
         tweenSequence.AppendInterval(outerRingDelay - 3f);
-        tweenSequence.Append(center.transform.DOScale(oldScale * 0.5f, 2f).SetEase(Ease.InCirc).OnComplete(() => { WaarIsSimon(); }));
+        tweenSequence.Append(center.transform.DOScale(oldScale * 0.5f, 2f).SetEase(Ease.InCirc).OnComplete(() => { 
+            WaarIsSimon(); 
+            AudioManager.Instance.PlaySound(SoundType.SndShockwave);
+        }));
         tweenSequence.Append(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
         //tweenSequence.Join(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
         tweenSequence.Play();
