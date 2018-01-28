@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,16 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
 
     private Sequence tweenSequence;
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("GameWithMenu");
+    }
 
     protected void Awake()
     {

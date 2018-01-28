@@ -45,4 +45,19 @@ public class GameGlobals : ScriptableObject
 
         return c;
     }
+
+    public static float GetSpeedFor(Modes mode)
+    {
+        switch (mode)
+        {
+            case Modes.LEO:
+                return 0.35f;
+            case Modes.MEO:
+                return 0.25f;
+            case Modes.HEO:
+                return 0.15f;
+        }
+
+        return 0.25f;
+    }
 }
