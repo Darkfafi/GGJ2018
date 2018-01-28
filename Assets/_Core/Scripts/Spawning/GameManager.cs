@@ -161,19 +161,19 @@ public class GameManager : MonoBehaviour
                 outerRingDelay = 10;
                 break;
             case 1:
-                spawnDelay = 15;
-                spawnAmount = 2;
+                spawnDelay = 10;
+                spawnAmount = UnityEngine.Random.Range(2, 4);
                 outerRingDelay = UnityEngine.Random.Range(10, 16);
                 break;
             case 2:
                 spawnDelay = 10;
                 spawnAmount = UnityEngine.Random.Range(3, 5);
-                outerRingDelay = UnityEngine.Random.Range(10, 16);
+                outerRingDelay = UnityEngine.Random.Range(11, 16);
                 break;
             default:
                 spawnDelay = 8;
                 spawnAmount = UnityEngine.Random.Range(4, 6);
-                outerRingDelay = UnityEngine.Random.Range(10, 16);
+                outerRingDelay = UnityEngine.Random.Range(11, 16);
                 break;
         }
 
@@ -183,10 +183,11 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnAmount(int v)
     {
-        for(int i = 0; i < v; i++)
+        float angle = (360 / v) + UnityEngine.Random.Range(0, 360);
+        for (int i = 0; i < v; i++)
         {
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 0.8f));
-            spawner.SpawnSatelite();
+            spawner.SpawnSatelite(angle * (i + 1));
         }
     }
 
