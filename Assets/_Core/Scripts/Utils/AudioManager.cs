@@ -109,61 +109,81 @@ public class AudioManager : MonoBehaviour
                 audioPlayer.Play();
                 break;
             case SoundType.SndSignalDown:
-
+                audioPlayer.clip = SndSignalDown;
+                audioPlayer.Play();
                 break;
             case SoundType.SndShootRocket:
-
+                audioPlayer.clip = SndShootRocket;
+                audioPlayer.Play();
                 break;
             case SoundType.SndSattiliteIdle:
-
+                audioPlayer.clip = SndSattiliteIdle;
+                audioPlayer.Play();
                 break;
             case SoundType.SndSattiliteFalling:
-
+                audioPlayer.clip = SndSattiliteFalling;
+                audioPlayer.Play();
                 break;
             case SoundType.SndSattiliteCrash:
-
+                audioPlayer.clip = SndSattiliteCrash;
+                audioPlayer.Play();
                 break;
-            case SoundType.SndShockwave:
-
+            //case SoundType.SndShockwave:
+            //    audioPlayer.clip = SndShockwave;
+            //    audioPlayer.Play();
             case SoundType.SndGetPoints:
-
+                audioPlayer.clip = SndGetPoints;
+                audioPlayer.Play();
                 break;
             case SoundType.SndLosePoints:
-
+                audioPlayer.clip = SndLosePoints;
+                audioPlayer.Play();
                 break;
             case SoundType.SndMenuClick:
-
+                audioPlayer.clip = SndMenuClick;
+                audioPlayer.Play();
                 break;
             case SoundType.SndMenuIdle:
-
+                audioPlayer.clip = SndMenuIdle;
+                audioPlayer.Play();
                 break;
             case SoundType.SndGameIdle:
-
+                audioPlayer.clip = SndGameIdle;
+                audioPlayer.Play();
                 break;
             case SoundType.SndEnemyShoot:
-
+                audioPlayer.clip = SndEnemyShoot;
+                audioPlayer.Play();
                 break;
             case SoundType.SndEnemyIdle:
-
+                audioPlayer.clip = SndEnemyIdle;
+                audioPlayer.Play();
                 break;
             case SoundType.SndEnemyCrash:
-
+                audioPlayer.clip = SndEnemyCrash;
+                audioPlayer.Play();
                 break;
             case SoundType.SndTowerDeactive:
-
+                audioPlayer.clip = SndTowerDeactive;
+                audioPlayer.Play();
                 break;
             case SoundType.SndTowerReActive:
-
+                audioPlayer.clip = SndTowerReActive;
+                audioPlayer.Play();
                 break;
             case SoundType.SndTowerMalfunction:
-
+                audioPlayer.clip = SndTowerMalfunction;
+                audioPlayer.Play();
                 break;
             case SoundType.SndTowerReFuntion:
-
+                audioPlayer.clip = SndTowerReFuntion;
+                audioPlayer.Play();
                 break;
             case SoundType.SndArnoldGetDown:
-
+                audioPlayer.clip = SndArnoldGetDown;
+                audioPlayer.Play();
                 break;
+            
             default:
                 break;
         }

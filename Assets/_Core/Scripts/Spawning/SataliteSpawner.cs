@@ -14,14 +14,6 @@ public class SataliteSpawner : MonoBehaviour
     [SerializeField]
     private Transform Center;
 
-    protected void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnSatelite();
-        }
-    }
-
     public void SpawnSatelite()
     {
         SatelliteBase sb = Instantiate(satelitePrefab, transform.position, Quaternion.identity);
