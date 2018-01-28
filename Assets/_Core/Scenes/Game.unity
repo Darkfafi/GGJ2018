@@ -1235,6 +1235,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &673706778 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224037429523319390, guid: 4bccfada40c55204db50135db9231976,
+    type: 2}
+  m_PrefabInternal: {fileID: 1181144555}
 --- !u!1 &676635507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1880,6 +1885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1850931281}
   center: {fileID: 992033752}
+  gameOverScreen: {fileID: 673706778}
 --- !u!1 &1003779209
 GameObject:
   m_ObjectHideFlags: 0

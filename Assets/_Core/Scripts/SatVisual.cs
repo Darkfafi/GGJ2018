@@ -92,7 +92,7 @@ public class SatVisual : MonoBehaviour {
 		}
 	}
 
-	void KillSatellite(Transform t)
+	public void KillSatellite(Transform t)
 	{
 		Transform explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as Transform;
 		Destroy(t.parent.gameObject);

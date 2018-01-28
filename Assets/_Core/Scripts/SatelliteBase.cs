@@ -49,15 +49,17 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             }
             if (_state == States.CLEAR && nm == Modes.None)
             {
-                float desiredHeight = 20;
+                float desiredHeight = 40;
                 
-                Visual.DOLocalMoveY(desiredHeight, 5).OnComplete(()=> 
+                Visual.DOLocalMoveY(desiredHeight, 10).OnComplete(()=> 
                 {
                     Destroy(gameObject);
                 });
             }
         }
     }
+
+    public States State { get { return _state; } }
 
     [SerializeField]
     private Modes _mode = Modes.MEO;
