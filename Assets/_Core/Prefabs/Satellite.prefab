@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 4496722382238132}
   - component: {fileID: 114341958087453452}
   - component: {fileID: 114530002458936722}
+  - component: {fileID: 114731747816186616}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Untagged
@@ -245,7 +246,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1046554446803826}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.06975647, w: 0.9975641}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -254,7 +255,7 @@ Transform:
   - {fileID: 4309008499818240}
   m_Father: {fileID: 4496722382238132}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8}
 --- !u!4 &4309008499818240
 Transform:
   m_ObjectHideFlags: 1
@@ -788,6 +789,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _satVisual: {fileID: 114917120472105288}
+--- !u!114 &114731747816186616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1813418348735258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08dcb8b0950447beb54cd2102876655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _visual: {fileID: 4267337508310604}
 --- !u!114 &114917120472105288
 MonoBehaviour:
   m_ObjectHideFlags: 1
