@@ -28,3 +28,5 @@ MonoBehaviour:
     AudioClip: {fileID: 8300000, guid: d6664c9908ede478ab658025d831b0fc, type: 3}
   - Name: Explosion
     AudioClip: {fileID: 8300000, guid: d85b87e10404c4698b3a727a556315e3, type: 3}
+  - Name: OST
+    AudioClip: {fileID: 8300000, guid: 9000e7294d0534962854b44681931afd, type: 3}
