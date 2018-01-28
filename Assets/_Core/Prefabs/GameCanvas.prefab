@@ -532,13 +532,17 @@ MonoBehaviour:
   SndMenuIdle: {fileID: 0}
   SndGameIdle: {fileID: 0}
   SndEnemyIdle: {fileID: 0}
-  SndEnemyShoot: {fileID: 0}
-  SndEnemyCrash: {fileID: 0}
+  PiepHigh: {fileID: 8300000, guid: d76f004129d4e44c5b2cde7f6a37ea56, type: 3}
+  PiepLow: {fileID: 8300000, guid: b917b1537c66844609dcd96fd96bf51d, type: 3}
   SndTowerDeactive: {fileID: 0}
   SndTowerMalfunction: {fileID: 0}
-  SndTowerReActive: {fileID: 8300000, guid: dc1547c6b1b364212812b36ed7d0aca3, type: 3}
+  SndTowerReActive: {fileID: 8300000, guid: 2700c367729db4aa9803e5ed1ed5cea5, type: 3}
   SndTowerReFuntion: {fileID: 0}
   SndArnoldGetDown: {fileID: 0}
+  audioPlayer: {fileID: 82660264586073162}
+  musicPlayer: {fileID: 0}
+  lowPitchRange: 0.95
+  highPitchRange: 1.05
 --- !u!114 &114675139167357100
 MonoBehaviour:
   m_ObjectHideFlags: 1
