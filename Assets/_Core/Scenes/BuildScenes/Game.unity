@@ -1880,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1850931281}
   center: {fileID: 992033752}
-  gameOverScreen: {fileID: 0}
+  gameOverScreen: {fileID: 1181144556}
 --- !u!1 &1003779209
 GameObject:
   m_ObjectHideFlags: 0
@@ -5484,9 +5484,18 @@ Prefab:
       propertyPath: PiepHigh
       value: 
       objectReference: {fileID: 8300000, guid: d76f004129d4e44c5b2cde7f6a37ea56, type: 3}
+    - target: {fileID: 1423109033585364, guid: 4bccfada40c55204db50135db9231976, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bccfada40c55204db50135db9231976, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &1181144556 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224037429523319390, guid: 4bccfada40c55204db50135db9231976,
+    type: 2}
+  m_PrefabInternal: {fileID: 1181144555}
 --- !u!1 &1271934510
 GameObject:
   m_ObjectHideFlags: 0
