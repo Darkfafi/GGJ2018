@@ -74,7 +74,7 @@ public class SatVisual : MonoBehaviour {
             {
                 if (Health.singleton != null)
                 {
-                    Health.singleton.DoDamage(.1f);
+                    Health.singleton.DoDamage(10);
                 }
                 else
                 {
