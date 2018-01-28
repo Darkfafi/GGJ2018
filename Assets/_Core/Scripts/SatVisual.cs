@@ -72,7 +72,15 @@ public class SatVisual : MonoBehaviour {
 		{
             if (Killable)
             {
-                Health.singleton.DoDamage(.1f);
+                if (Health.singleton != null)
+                {
+                    Health.singleton.DoDamage(.1f);
+                }
+                else
+                {
+                    Debug.LogWarning("No Health Was Damaged, please add Health to Scene");
+                }
+
                 KillSatellite(coll.transform);
             }
 
@@ -92,7 +100,7 @@ public class SatVisual : MonoBehaviour {
 		}
 	}
 
-	void KillSatellite(Transform t)
+	public void KillSatellite(Transform t)
 	{
 		Transform explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as Transform;
 		Destroy(t.parent.gameObject);

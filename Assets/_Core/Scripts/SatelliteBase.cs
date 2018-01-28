@@ -38,6 +38,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             SetLine(nm);
             if (_state == States.IN_ORBIT && nm != Modes.None)
             {
+                SetSpeed(nm);
                 DoMovementToLane(nm).OnComplete(() =>
                 {
                     _mode = nm;
@@ -49,15 +50,17 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
             }
             if (_state == States.CLEAR && nm == Modes.None)
             {
-                float desiredHeight = 20;
+                float desiredHeight = 40;
                 
-                Visual.DOLocalMoveY(desiredHeight, 5).OnComplete(()=> 
+                Visual.DOLocalMoveY(desiredHeight, 10).OnComplete(()=> 
                 {
                     Destroy(gameObject);
                 });
             }
         }
     }
+
+    public States State { get { return _state; } }
 
     [SerializeField]
     private Modes _mode = Modes.MEO;
@@ -70,6 +73,7 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         DoMovementToLane(mode);
         currentCircle = gameObject.AddComponent<DrawCircle>();
         SetLine(mode);
+        SetSpeed(mode);
     }
 
     protected void FixedUpdate () {
@@ -122,5 +126,12 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         Color c = GameGlobals.GetColorFor(mode);
         c.a = 0.25f;
         currentCircle.SetLineColor(c, 0.15f);
+    }
+
+    private void SetSpeed(Modes mode)
+    {
+        Vector3 or = orbitRotation;
+        or.z = GameGlobals.GetSpeedFor(mode);
+        orbitRotation = or;
     }
 }

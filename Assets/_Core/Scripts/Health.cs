@@ -9,8 +9,6 @@ public class Health : MonoBehaviour {
 
 	float health = 1;
 
-	public Transform gameOverScreen;
-
 	void Awake()
 	{
 		if (singleton == null)
@@ -33,7 +31,7 @@ public class Health : MonoBehaviour {
 
 		if (health <= 0)
 		{
-			gameOverScreen.gameObject.SetActive(true);
+            FindObjectOfType<GameManager>().EndGame();
 		}
 
 	}

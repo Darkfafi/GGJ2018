@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private Transform center;
+
+    [SerializeField]
+    private Transform gameOverScreen;
 
     // Spawning
     private float lastSpawnTime = 0;
@@ -22,6 +26,20 @@ public class GameManager : MonoBehaviour
 
     private float counter = 0;
 
+    private bool gameEnded = false;
+
+    private Sequence tweenSequence;
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("GameWithMenu");
+    }
+
     protected void Awake()
     {
         //OuterRing();
@@ -29,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     protected void Update()
     {
+        if (gameEnded) { return; }
         lastSpawnTime += Time.deltaTime;
         if(lastSpawnTime > spawnDelay)
         {
@@ -44,14 +63,35 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void EndGame()
+    {
+        gameOverScreen.gameObject.SetActive(true);
+        tweenSequence.Kill();
+        StopAllCoroutines(); // Stops spawning enemies
+        lastSpawnTime = 0;
+        outerRingTime = 0;
+        gameEnded = true;
+        WaarIsSimon();
+
+        SatelliteBase[] allSatellites = FindObjectsOfType<SatelliteBase>();
+
+        for(int i = allSatellites.Length -1; i >= 0; i--)
+        {
+            SatelliteBase sb = allSatellites[i];
+            if(sb.State == SatelliteBase.States.IN_ORBIT)
+            {
+                sb.Visual.GetComponent<SatVisual>().KillSatellite(sb.Visual);
+            }
+        }
+    }
+
     private void OuterRing()
     {
         outerRingTime = 0;
         outerRingDelay = UnityEngine.Random.Range(8f, 16f);
         Vector3 oldScale = center.transform.localScale;
 
-        Sequence tweenSequence = DOTween.Sequence();
-
+        tweenSequence = DOTween.Sequence();
         tweenSequence.AppendInterval(outerRingDelay - 3f);
         tweenSequence.Append(center.transform.DOScale(oldScale * 0.5f, 2f).SetEase(Ease.InCirc).OnComplete(() => { 
             WaarIsSimon(); 
@@ -96,8 +136,11 @@ public class GameManager : MonoBehaviour
 
     private void ReleaseSatellite(SatelliteBase sat)
     {
-        sat.SetReleased();
-        Score.Instance.AddScore(100, sat.Visual.gameObject.transform.position);
+        if (sat.State == SatelliteBase.States.IN_ORBIT)
+        {
+            sat.SetReleased();
+            Score.Instance.AddScore(100, sat.Visual.gameObject.transform.position);
+        }
     }
 
     private void SetNextLevel()
