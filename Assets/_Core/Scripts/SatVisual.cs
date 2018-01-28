@@ -72,7 +72,15 @@ public class SatVisual : MonoBehaviour {
 		{
             if (Killable)
             {
-                Health.singleton.DoDamage(.1f);
+                if (Health.singleton != null)
+                {
+                    Health.singleton.DoDamage(.1f);
+                }
+                else
+                {
+                    Debug.LogWarning("No Health Was Damaged, please add Health to Scene");
+                }
+
                 KillSatellite(coll.transform);
             }
 
