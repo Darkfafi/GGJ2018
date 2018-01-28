@@ -17,8 +17,8 @@ public enum SoundType
     SndMenuClick,
     SndMenuIdle,
     SndGameIdle,
-    SndEnemyIdle,
-    SndEnemyShoot,      //15
+    PiepHigh,
+    PiepLow,      //15
     SndEnemyCrash,
     SndTowerDeactive,
     SndTowerMalfunction,
@@ -59,9 +59,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AudioClip SndEnemyIdle = null;
     [SerializeField]
-    private AudioClip SndEnemyShoot = null;
+    private AudioClip PiepHigh = null;
     [SerializeField]
-    private AudioClip SndEnemyCrash = null;
+    private AudioClip PiepLow = null;
     [SerializeField]
     private AudioClip SndTowerDeactive = null;
     [SerializeField]
@@ -75,6 +75,11 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource audioPlayer;
+    [SerializeField]
+    private AudioSource musicPlayer;
+
+    public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
+    public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 
     public static AudioManager _instance;
     public static AudioManager Instance
@@ -100,6 +105,7 @@ public class AudioManager : MonoBehaviour
     {
         
     }
+
     public void PlaySound(SoundType type)
     {
         switch (type)
@@ -128,9 +134,10 @@ public class AudioManager : MonoBehaviour
                 audioPlayer.clip = SndSattiliteCrash;
                 audioPlayer.Play();
                 break;
-            //case SoundType.SndShockwave:
-            //    audioPlayer.clip = SndShockwave;
-            //    audioPlayer.Play();
+            case SoundType.SndShockwave:
+                audioPlayer.clip = SndShockwave;
+                audioPlayer.Play();
+                break;
             case SoundType.SndGetPoints:
                 audioPlayer.clip = SndGetPoints;
                 audioPlayer.Play();
@@ -151,16 +158,16 @@ public class AudioManager : MonoBehaviour
                 audioPlayer.clip = SndGameIdle;
                 audioPlayer.Play();
                 break;
-            case SoundType.SndEnemyShoot:
-                audioPlayer.clip = SndEnemyShoot;
+            case SoundType.PiepLow:
+                audioPlayer.clip = PiepLow;
                 audioPlayer.Play();
                 break;
-            case SoundType.SndEnemyIdle:
-                audioPlayer.clip = SndEnemyIdle;
+            case SoundType.PiepHigh:
+                audioPlayer.clip = PiepHigh;
                 audioPlayer.Play();
                 break;
             case SoundType.SndEnemyCrash:
-                audioPlayer.clip = SndEnemyCrash;
+                audioPlayer.clip = PiepLow;
                 audioPlayer.Play();
                 break;
             case SoundType.SndTowerDeactive:

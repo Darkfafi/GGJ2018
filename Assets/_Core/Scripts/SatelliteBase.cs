@@ -103,6 +103,16 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         if (_state != States.IN_ORBIT) { return null; }
         Visual.DOComplete();
         float desiredHeight = GameGlobals.GetHeightFor(mode);
+        print("y = "+visual.transform.localPosition.y+", desired = "+desiredHeight);
+        if (visual.transform.localPosition.y < desiredHeight)
+        {
+            AudioManager.Instance.PlaySound(SoundType.PiepHigh);
+        }
+        else
+        {
+            AudioManager.Instance.PlaySound(SoundType.PiepLow);
+        }
+
         return Visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
     }
 
