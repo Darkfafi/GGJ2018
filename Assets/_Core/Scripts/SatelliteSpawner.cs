@@ -13,7 +13,8 @@ public class SatelliteSpawner : MonoBehaviour {
 	public List<Transform> rocketFacility = new List<Transform>();
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         StartCoroutine(WaveSpawner());
 	}
 

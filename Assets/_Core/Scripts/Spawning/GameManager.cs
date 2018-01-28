@@ -88,7 +88,6 @@ public class GameManager : MonoBehaviour
     private void OuterRing()
     {
         outerRingTime = 0;
-        outerRingDelay = UnityEngine.Random.Range(8f, 16f);
         Vector3 oldScale = center.transform.localScale;
 
         tweenSequence = DOTween.Sequence();
@@ -146,9 +145,34 @@ public class GameManager : MonoBehaviour
     private void SetNextLevel()
     {
         level++;
-        spawnDelay = 3 + UnityEngine.Random.Range(4 - (int)(level / 5), 6);
+        int spawnAmount = 1;
+
+        switch (GetSection(level))
+        {
+            case 0:
+                spawnDelay = 10;
+                spawnAmount = 1;
+                outerRingDelay = 10;
+                break;
+            case 1:
+                spawnDelay = 15;
+                spawnAmount = 2;
+                outerRingDelay = UnityEngine.Random.Range(10, 16);
+                break;
+            case 2:
+                spawnDelay = 10;
+                spawnAmount = UnityEngine.Random.Range(3, 5);
+                outerRingDelay = UnityEngine.Random.Range(10, 16);
+                break;
+            default:
+                spawnDelay = 8;
+                spawnAmount = UnityEngine.Random.Range(4, 6);
+                outerRingDelay = UnityEngine.Random.Range(10, 16);
+                break;
+        }
+
         lastSpawnTime = 0;
-        StartCoroutine(SpawnAmount((int)(1 + level / 5)));
+        StartCoroutine(SpawnAmount(spawnAmount));
     }
 
     private IEnumerator SpawnAmount(int v)
@@ -158,5 +182,17 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(UnityEngine.Random.Range(0.5f, 0.8f));
             spawner.SpawnSatelite();
         }
+    }
+
+    private int GetSection(int level)
+    {
+        if (level <= 2)
+            return 0;
+        if (level <= 6)
+            return 1;
+        if (level <= 10)
+            return 2;
+
+        return -1;
     }
 }
