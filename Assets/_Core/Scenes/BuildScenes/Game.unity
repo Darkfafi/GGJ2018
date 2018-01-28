@@ -5468,7 +5468,7 @@ Prefab:
         type: 2}
       propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 1954393625}
+      objectReference: {fileID: 0}
     - target: {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976,
         type: 2}
       propertyPath: SndTowerReActive
@@ -5484,7 +5484,9 @@ Prefab:
       propertyPath: PiepHigh
       value: 
       objectReference: {fileID: 8300000, guid: d76f004129d4e44c5b2cde7f6a37ea56, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976, type: 2}
+    - {fileID: 82660264586073162, guid: 4bccfada40c55204db50135db9231976, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4bccfada40c55204db50135db9231976, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1271934510
@@ -6183,11 +6185,22 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853733681}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!82 &1954393625 stripped
-AudioSource:
-  m_PrefabParentObject: {fileID: 82660264586073162, guid: 4bccfada40c55204db50135db9231976,
+--- !u!1 &1954393619 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1525903029193596, guid: 4bccfada40c55204db50135db9231976,
     type: 2}
   m_PrefabInternal: {fileID: 1181144555}
+--- !u!114 &1954393620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954393619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a463cd08501d3aa4b845f044557a2c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1958032685
 GameObject:
   m_ObjectHideFlags: 0

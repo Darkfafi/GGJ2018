@@ -35,6 +35,7 @@ public class TowerBase : MonoBehaviour
 		{
 			if (Input.GetMouseButtonDown(0))
 			{
+                AudioSystem.Instance.PlayAudio("PiepHigh");
 				if (mode == Modes.MEO || mode == Modes.None)
 				{
                     SetOribitSignal(Modes.HEO);
@@ -53,7 +54,8 @@ public class TowerBase : MonoBehaviour
 			}
 
 			if (Input.GetMouseButtonDown(1))
-			{
+            {
+                AudioSystem.Instance.PlayAudio("PiepLow");
                 if (mode == Modes.MEO || mode == Modes.None)
                 {
                     SetOribitSignal(Modes.LEO);

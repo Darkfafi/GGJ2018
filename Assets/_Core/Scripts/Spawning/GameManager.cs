@@ -93,9 +93,9 @@ public class GameManager : MonoBehaviour
 
         tweenSequence = DOTween.Sequence();
         tweenSequence.AppendInterval(outerRingDelay - 3f);
-        tweenSequence.Append(center.transform.DOScale(oldScale * 0.5f, 2f).SetEase(Ease.InCirc).OnStart(() => { AudioManager.Instance.PlaySound(SoundType.SndTowerReActive); }).OnComplete(() => { 
+        tweenSequence.Append(center.transform.DOScale(oldScale * 0.5f, 2f).SetEase(Ease.InCirc).OnStart(() => { AudioSystem.Instance.PlayAudio("ReadyToBlow"); }).OnComplete(() => { 
             WaarIsSimon(); 
-            AudioManager.Instance.PlaySound(SoundType.SndShockwave);
+            AudioSystem.Instance.PlayAudio("BlowPlanet");
         }));
         tweenSequence.Append(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
         //tweenSequence.Join(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
