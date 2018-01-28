@@ -37,6 +37,9 @@ public class StartOptions : MonoBehaviour {
         menuCanvasGroup = GetComponent<CanvasGroup>();
 
         fadeImage.color = menuSettingsData.sceneChangeFadeColor;
+
+        AudioSystem.Instance.StopAudio(3);
+        AudioSystem.Instance.PlayAudio("Menu", 3);
 	}
 
 
