@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     protected void Awake()
     {
         //OuterRing();
+        AudioSystem.Instance.PlayAudio("OST", 3);
     }
 
     protected void Update()
