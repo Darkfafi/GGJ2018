@@ -5,10 +5,14 @@ using DG.Tweening;
 
 public class SpaceLaunch : MonoBehaviour
 {
+	public Transform warningSign;
+
     [SerializeField]
     private Transform center;
 
     private Dictionary<ILaunchable, float> launchableProgressionMap = new Dictionary<ILaunchable, float>();
+
+
 
     public void SendToPointInSpace(ILaunchable launchable, Vector3 locationDirection, Modes lane, float duration)
     {
@@ -16,6 +20,9 @@ public class SpaceLaunch : MonoBehaviour
         float h = (lane == Modes.None) ? Random.Range(GameGlobals.GetHeightFor(Modes.HEO), GameGlobals.GetHeightFor(Modes.HEO) + 2) : GameGlobals.GetHeightFor(lane);
         launchableProgressionMap.Add(launchable, 0);
         Vector3 target = center.position + locationDirection.normalized * h;
+		Debug.Log("warning sign");
+		Transform warning = Instantiate(warningSign, target, Quaternion.identity) as Transform;
+
         Vector3 startPos = transform.position;
         launchable.SetLaunchState(true);
         DOTween.To(
