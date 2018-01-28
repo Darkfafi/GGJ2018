@@ -1235,11 +1235,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &673706778 stripped
-RectTransform:
-  m_PrefabParentObject: {fileID: 224037429523319390, guid: 4bccfada40c55204db50135db9231976,
-    type: 2}
-  m_PrefabInternal: {fileID: 1181144555}
 --- !u!1 &676635507
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,7 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawner: {fileID: 1850931281}
   center: {fileID: 992033752}
-  gameOverScreen: {fileID: 673706778}
+  gameOverScreen: {fileID: 0}
 --- !u!1 &1003779209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2054,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1956450501
+  randomSeed: -255930113
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5469,16 +5464,26 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114110384828922624, guid: 4bccfada40c55204db50135db9231976,
+    - target: {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: audioPlayer
       value: 
-      objectReference: {fileID: 992033755}
-    - target: {fileID: 114767854807286964, guid: 4bccfada40c55204db50135db9231976,
+      objectReference: {fileID: 1954393625}
+    - target: {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976,
         type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: SndTowerReActive
       value: 
-      objectReference: {fileID: 992033755}
+      objectReference: {fileID: 8300000, guid: 2700c367729db4aa9803e5ed1ed5cea5, type: 3}
+    - target: {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976,
+        type: 2}
+      propertyPath: PiepLow
+      value: 
+      objectReference: {fileID: 8300000, guid: b917b1537c66844609dcd96fd96bf51d, type: 3}
+    - target: {fileID: 114584563562945286, guid: 4bccfada40c55204db50135db9231976,
+        type: 2}
+      propertyPath: PiepHigh
+      value: 
+      objectReference: {fileID: 8300000, guid: d76f004129d4e44c5b2cde7f6a37ea56, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bccfada40c55204db50135db9231976, type: 2}
   m_IsPrefabParent: 0
@@ -6178,6 +6183,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1853733681}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &1954393625 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82660264586073162, guid: 4bccfada40c55204db50135db9231976,
+    type: 2}
+  m_PrefabInternal: {fileID: 1181144555}
 --- !u!1 &1958032685
 GameObject:
   m_ObjectHideFlags: 0
