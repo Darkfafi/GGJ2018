@@ -53,8 +53,9 @@ public class GameManager : MonoBehaviour
         Sequence tweenSequence = DOTween.Sequence();
 
         tweenSequence.AppendInterval(outerRingDelay - 3f);
-        tweenSequence.Append(center.transform.DOScale(oldScale * 0.85f, 2f).SetEase(Ease.InCirc).OnComplete(() => { WaarIsSimon(); }));
+        tweenSequence.Append(center.transform.DOScale(oldScale * 0.75f, 2f).SetEase(Ease.InCirc).OnComplete(() => { WaarIsSimon(); }));
         tweenSequence.Append(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
+        //tweenSequence.Join(center.transform.DOScale(oldScale, 1f).SetEase(Ease.OutElastic));
         tweenSequence.Play();
         /*center.transform.DOShakeScale(4f, 0.2f).SetDelay(outerRingTime - 7f);
         center.transform.DOShakeScale(3f, 0.5f).OnComplete(() => {
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
     private void WaarIsSimon()
     {
         print("waar is simon");
+        Screenshake.Instance.Shake(1f, 1f);
         SatelliteBase[] allSatilites = FindObjectsOfType<SatelliteBase>();
 
 
