@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
                 Camera.main.DOFieldOfView(65, 1.5f).SetEase(Ease.InOutQuad).SetDelay(0.5f);
             });
 
-        float angle = (360 / v) + UnityEngine.Random.Range(0, 360);
+        float angle = (360f / (float)v) + UnityEngine.Random.Range(0, 360);
         float tv = (v < 2) ? 0.7f : 0;
 
         for (int i = 0; i < v; i++)
