@@ -30,6 +30,8 @@ public class EventSystemChecker : MonoBehaviour
             //The following code instantiates a new object called EventSystem
             GameObject obj = new GameObject("EventSystem");
 
+            print("loaded");
+
             //And adds the required components, while storing a reference in the menuSystem variable, which is static and accessible from other scripts
             menuEventSystem = obj.AddComponent<EventSystem>();
             obj.AddComponent<StandaloneInputModule>().forceModuleActive = true;
