@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     private float counter = 0;
 
     private bool gameEnded = false;
-
+    private Vector3 oldScale;
     private Sequence tweenSequence;
 
     public void RestartLevel()
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     protected void Awake()
     {
+        oldScale = center.transform.localScale;
         //OuterRing();
     }
 
@@ -88,7 +89,11 @@ public class GameManager : MonoBehaviour
     private void OuterRing()
     {
         outerRingTime = 0;
-        Vector3 oldScale = center.transform.localScale;
+
+        if(tweenSequence != null && tweenSequence.IsPlaying())
+        {
+            tweenSequence.Complete(true);
+        }
 
         tweenSequence = DOTween.Sequence();
         tweenSequence.AppendInterval(outerRingDelay - 3f);
