@@ -103,8 +103,7 @@ public class SatVisual : MonoBehaviour {
 	public void KillSatellite(Transform t)
 	{
         Transform explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity) as Transform;
-        AudioSystem.Instance.StopAudio(2);
-        AudioSystem.Instance.PlayAudio("Explosion", 2);
+        AudioSystem.Instance.PlaySoloAudio("Explosion");
 		Destroy(t.parent.gameObject);
 	}
 
