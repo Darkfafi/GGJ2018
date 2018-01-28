@@ -87,13 +87,17 @@ public class Score : MonoBehaviour {
             tweenSequence.Append(_goRect.DOMoveY(_goRect.transform.position.y + 40f, 0.2f).SetEase(Ease.OutSine));
             tweenSequence.Join(_goRect.DOScale(Vector3.one, 0.2f));
             tweenSequence.Append(_goRect.DOPunchScale(Vector3.one * 0.5f, 0.2f, 7, 0.4f));
-            tweenSequence.AppendInterval(0.2f);
+            float r = (float)Random.Range(0, 100) / 1000f;
+            print(r); 
+            tweenSequence.AppendInterval(0.2f + r);
             tweenSequence.Append(_goRect.DOMove(_rect.transform.position, 0.75f).SetEase(Ease.InCubic).OnComplete(() =>
             {
                 Destroy(go);
                 _scoreTarget += _scoreParam;
                 _rect.DOComplete();
                 _rect.DOPunchScale(Vector3.one * 0.1f, 0.75f, 10, 1);
+                AudioSystem.Instance.PlayAudio("Score");
+
             }));
             tweenSequence.Play();
             /*_goRect.DOPunchScale(Vector3.one * 0.2f, _tweenDuration, 7, 0);

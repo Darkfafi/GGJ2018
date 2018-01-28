@@ -11,4 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dfb212323f3fa4984b01d8ee5b1d1f, type: 3}
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
-  allAudio: []
+  allAudio:
+  - Name: BlowPlanet
+    AudioClip: {fileID: 8300000, guid: ba43f8fc3fc0e448ebf3ef69c9c68f9d, type: 3}
+  - Name: PiepHigh
+    AudioClip: {fileID: 8300000, guid: d76f004129d4e44c5b2cde7f6a37ea56, type: 3}
+  - Name: PiepLow
+    AudioClip: {fileID: 8300000, guid: b917b1537c66844609dcd96fd96bf51d, type: 3}
+  - Name: ReadyToBlow
+    AudioClip: {fileID: 8300000, guid: 2700c367729db4aa9803e5ed1ed5cea5, type: 3}
+  - Name: SwooshHigh
+    AudioClip: {fileID: 8300000, guid: a95dd3d077466484eb77c6ab1c96a17c, type: 3}
+  - Name: SwooshLow
+    AudioClip: {fileID: 8300000, guid: 56ab03f7687e744cbb279bb9dced8edb, type: 3}
+  - Name: Score
+    AudioClip: {fileID: 8300000, guid: d6664c9908ede478ab658025d831b0fc, type: 3}
+  - Name: Explosion
+    AudioClip: {fileID: 8300000, guid: d85b87e10404c4698b3a727a556315e3, type: 3}

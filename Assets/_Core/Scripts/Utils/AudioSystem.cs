@@ -150,7 +150,7 @@ public class AudioSystem : MonoBehaviour
 
     public void ConStruct()
     {
-        Library = Resources.Load<AudioLibrary>("Libraries/AudioLibrary");
+        Library = Resources.Load<AudioLibrary>("AudioLibrary");
 
         SetAudioStationVolume(DEFAULT_STATION, startDefaultVolume);
         SetAudioStationVolume(EFFECTS_STATION, startEffectsVolume);

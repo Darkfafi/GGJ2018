@@ -105,11 +105,11 @@ public class SatelliteBase : MonoBehaviour, ILaunchable
         float desiredHeight = GameGlobals.GetHeightFor(mode);
         if (visual.transform.localPosition.y < desiredHeight)
         {
-            AudioManager.Instance.PlaySound(SoundType.PiepHigh);
+            AudioSystem.Instance.PlayAudio("SwooshLow");
         }
         else
         {
-            AudioManager.Instance.PlaySound(SoundType.PiepLow);
+            AudioSystem.Instance.PlayAudio("SwooshHigh");
         }
 
         return Visual.DOLocalMoveY(desiredHeight, switchLaneDuration);
