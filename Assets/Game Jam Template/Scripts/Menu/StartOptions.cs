@@ -38,7 +38,7 @@ public class StartOptions : MonoBehaviour {
 
         fadeImage.color = menuSettingsData.sceneChangeFadeColor;
 
-        AudioSystem.Instance.StopAudio(AudioSystem.MUSIC_STATION);
+        AudioSystem.Instance.StopAudio();
         AudioSystem.Instance.PlaySoloAudio("Menu", AudioSystem.MUSIC_STATION);
 	}
 

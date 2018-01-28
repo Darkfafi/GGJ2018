@@ -44,8 +44,9 @@ public class GameManager : MonoBehaviour
     {
         oldScale = center.transform.localScale;
         //OuterRing();
-        AudioSystem.Instance.StopAudio(AudioSystem.MUSIC_STATION);
-        AudioSystem.Instance.PlayAudio("OST", AudioSystem.MUSIC_STATION);
+
+        AudioSystem.Instance.StopAudio();
+        AudioSystem.Instance.PlaySoloAudio("OST", AudioSystem.MUSIC_STATION);
     }
 
     protected void Update()
